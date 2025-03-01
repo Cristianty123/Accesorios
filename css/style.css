@@ -1,0 +1,919 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+.main-frame,
+.main-frame * {
+  box-sizing: border-box;
+}
+.main-frame {
+  background: #191919;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 2841px;
+  position: relative;
+}
+.head {
+  display: flex;
+  flex-direction: row;
+  gap: 82px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  min-width: 1115px;
+  position: relative;
+}
+.frame-1 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  max-width: 324px;
+  min-height: 145px;
+  position: relative;
+}
+.logo-accesorios-light-1 {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 91.34px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 304/91.34;
+}
+.frame-6 {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.boton-inicio {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.inicio {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boton-accesorios {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 222px;
+  position: relative;
+}
+.accesorios {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 45px;
+  position: relative;
+}
+.accesorios2 {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boton-nosotros {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.nosotros {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boton-contacto {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.contacto {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  min-width: 1115px;
+  min-height: 1745px;
+  position: relative;
+}
+.frame-36 {
+  padding: 0px 60px 0px 60px;
+  display: flex;
+  flex-direction: row;
+  row-gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-11 {
+  border-radius: 100px;
+  padding: 50px 40px 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  min-width: 374px;
+  position: relative;
+}
+.encuentra-los-accesorios-ideales-para-ti-al-mejor-precio {
+  text-align: left;
+  font-family: "Roboto-SemiBold", sans-serif;
+  font-size: 46.90653991699219px;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.encuentra-los-accesorios-ideales-para-ti-al-mejor-precio-span {
+  color: #ffffff;
+  font-family: "Roboto-SemiBold", sans-serif;
+  font-size: 46.90653991699219px;
+  font-weight: 600;
+}
+.encuentra-los-accesorios-ideales-para-ti-al-mejor-precio-span2 {
+  color: #ff335f;
+  font-family: "Roboto-SemiBold", sans-serif;
+  font-size: 46.90653991699219px;
+  font-weight: 600;
+}
+.explora-nuestra-selecci-n-de-veh-culos-nuevos-y-usados-con-especificaciones-detalladas-fotos-en-alta-calidad-y-opciones-de-financiamiento {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.frame-12 {
+  background: #2c2c2c;
+  border-radius: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 600px;
+  min-height: 593px;
+  position: relative;
+}
+.image {
+  border-radius: 16.61px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 553px;
+  position: relative;
+  object-fit: cover;
+}
+.frame-14 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-37 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.encuentra-el-accesorio-ideal {
+  color: #ff335f;
+  text-align: center;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-38 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.variedad-calidad-y-confiabilidad-en-cada-marca-que-ofrecemos {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-23 {
+  padding: 0px 60px 0px 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  row-gap: 51px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.frame-44 {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  height: 374px;
+  min-width: 412.9px;
+  max-width: 926px;
+  position: relative;
+}
+.frame-16 {
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.image2 {
+  border-radius: 16.61px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 257.99px;
+  position: relative;
+  object-fit: cover;
+}
+.categoria-parqueo {
+  padding: 0px 59px 0px 59px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.boton-parqueo {
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 17px;
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.parqueo {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-45 {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 438.1px;
+  max-width: 926px;
+  position: relative;
+}
+.frame-20 {
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.categoria-externos {
+  padding: 0px 59px 0px 59px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 56px;
+  position: relative;
+}
+.boton-externos {
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 17px;
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.externos {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-46 {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 444px;
+  max-width: 926px;
+  position: relative;
+}
+.frame-21 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.image3 {
+  border-radius: 16.61px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 258px;
+  position: relative;
+  object-fit: cover;
+}
+.categoria-internos {
+  padding: 0px 59px 0px 59px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 56px;
+  position: relative;
+}
+.boton-internos {
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 17px;
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.internos {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-47 {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 412.9px;
+  max-width: 926px;
+  position: relative;
+}
+.audi {
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.categoria-luces-led {
+  padding: 0px 59px 0px 59px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 56px;
+  position: relative;
+}
+.boton-luces-led {
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 17px;
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.luces-led {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-48 {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  height: 374px;
+  min-width: 437.79px;
+  max-width: 926px;
+  position: relative;
+}
+.jeep {
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.categoria-modulo-elevavidrios {
+  padding: 0px 59px 0px 59px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.boton-modulo-elevavidrios {
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 17px;
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 47px;
+  position: relative;
+}
+.modulo-elevavidrios {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-49 {
+  background: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  height: 374px;
+  min-width: 444px;
+  max-width: 926px;
+  position: relative;
+}
+.frame-22 {
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.image4 {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 258px;
+  position: relative;
+  object-fit: cover;
+}
+.categoria-audio {
+  padding: 0px 59px 0px 59px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 47px;
+  position: relative;
+}
+.boton-audio {
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 17px;
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.audio {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 23.453269958496094px;
+  font-weight: 400;
+  position: relative;
+}
+.footer {
+  background: #2c2c2c;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  min-width: 1115px;
+  position: relative;
+}
+.frame-27 {
+  padding: 0px 30px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  height: 114.69px;
+  position: relative;
+}
+.frame-25 {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-39 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+.totes-bga-financiaci-n {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 400;
+  position: relative;
+  width: 209.29px;
+  height: 21.56px;
+}
+.frame-40 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+.cookie-settings {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 400;
+  position: relative;
+  width: 143.45px;
+  height: 21.56px;
+}
+.frame-41 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+.acerca-de {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 400;
+  position: relative;
+  width: 96.41px;
+  height: 21.56px;
+}
+.frame-42 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+.privacidad {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 400;
+  position: relative;
+  width: 94.85px;
+  height: 21.56px;
+}
+.frame-43 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+.nuestro-sistema {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 400;
+  position: relative;
+  width: 147.36px;
+  height: 21.56px;
+}
+.frame-26 {
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.pol-tica-de-protecci-n-de-datos-personales {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  height: 21.56px;
+}
+._2025-totes-bga-colombia-todos-los-derechos-reservados {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Roboto-Light", sans-serif;
+  font-size: 18.483671188354492px;
+  font-weight: 300;
+  position: relative;
+  align-self: stretch;
+  height: 21.56px;
+}
+.frame-13 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  position: relative;
+}
+.logo-accesorios-light-2 {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 84.13px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 280/84.13;
+}
+.footer a {
+  color: white; /* Hace que los enlaces sean blancos */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.footer a:visited {
+  color: white; /* Evita que cambien a morado cuando se visitan */
+}
+
+.footer a:hover {
+  color: #ff335f; /* Opcional: Cambia a un gris claro cuando pasas el mouse */
+}
+
+.footer a:active {
+  color: white; /* Evita que se vean diferentes al hacer clic */
+}
+.footer p {
+  color: white; /* Hace que los textos sean blancos */
+}
+
+
+
+
+
