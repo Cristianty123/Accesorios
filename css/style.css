@@ -370,30 +370,6 @@
   flex: 1;
   position: relative;
 }
-.boton-parqueo {
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 17px;
-  border-style: solid;
-  border-color: #2c2c2c;
-  border-width: 2px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.parqueo {
-  color: #000000;
-  text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
-  font-size: 23.453269958496094px;
-  font-weight: 400;
-  position: relative;
-}
 .frame-45 {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
@@ -429,30 +405,6 @@
   align-self: stretch;
   flex-shrink: 0;
   height: 56px;
-  position: relative;
-}
-.boton-externos {
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 17px;
-  border-style: solid;
-  border-color: #2c2c2c;
-  border-width: 2px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.externos {
-  color: #000000;
-  text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
-  font-size: 23.453269958496094px;
-  font-weight: 400;
   position: relative;
 }
 .frame-46 {
@@ -499,30 +451,6 @@
   height: 56px;
   position: relative;
 }
-.boton-internos {
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 17px;
-  border-style: solid;
-  border-color: #2c2c2c;
-  border-width: 2px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.internos {
-  color: #000000;
-  text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
-  font-size: 23.453269958496094px;
-  font-weight: 400;
-  position: relative;
-}
 .frame-47 {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
@@ -558,30 +486,6 @@
   align-self: stretch;
   flex-shrink: 0;
   height: 56px;
-  position: relative;
-}
-.boton-luces-led {
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 17px;
-  border-style: solid;
-  border-color: #2c2c2c;
-  border-width: 2px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.luces-led {
-  color: #000000;
-  text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
-  font-size: 23.453269958496094px;
-  font-weight: 400;
   position: relative;
 }
 .frame-48 {
@@ -621,31 +525,6 @@
   flex-shrink: 0;
   position: relative;
 }
-.boton-modulo-elevavidrios {
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 17px;
-  border-style: solid;
-  border-color: #2c2c2c;
-  border-width: 2px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 47px;
-  position: relative;
-}
-.modulo-elevavidrios {
-  color: #000000;
-  text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
-  font-size: 23.453269958496094px;
-  font-weight: 400;
-  position: relative;
-}
 .frame-49 {
   background: rgba(255, 255, 255, 0.4);
   display: flex;
@@ -671,13 +550,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.image4 {
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 258px;
-  position: relative;
-  object-fit: cover;
-}
+
 .categoria-audio {
   padding: 0px 59px 0px 59px;
   display: flex;
@@ -690,7 +563,7 @@
   height: 47px;
   position: relative;
 }
-.boton-audio {
+.boton-categoria {
   background: rgba(255, 255, 255, 0.66);
   border-radius: 17px;
   border-style: solid;
@@ -703,16 +576,23 @@
   align-items: center;
   justify-content: center;
   align-self: stretch;
+  cursor: pointer;
   flex-shrink: 0;
   position: relative;
 }
-.audio {
+.texto-boton {
   color: #000000;
   text-align: left;
   font-family: "Roboto-Regular", sans-serif;
   font-size: 23.453269958496094px;
   font-weight: 400;
   position: relative;
+}
+.boton-categoria:hover {
+  background: rgba(200, 200, 200, 0.8);
+}
+.boton-categoria:hover .texto-boton {
+  color: #ff335f;
 }
 .footer {
   background: #2c2c2c;
@@ -912,6 +792,35 @@
 .footer p {
   color: white; /* Hace que los textos sean blancos */
 }
+.nav-link {
+  color: #ffffff; /* Color del texto */
+  text-align: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 50px; /* Bordes redondeados */
+  background-color: transparent; /* Fondo transparente por defecto */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Cambio de color cuando el mouse pasa sobre el botón */
+.nav-link:hover {
+  color: #ff335f; /* Color del texto al pasar el mouse */
+}
+
+/* Efecto cuando se presiona el botón */
+.nav-link:active {
+  background-color: rgba(255, 255, 255, 0.4); /* Fondo con opacidad */
+}
+
+
+
 
 
 
