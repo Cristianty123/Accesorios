@@ -4,7 +4,8 @@
     gap: 30px;
     align-items: flex-start;
     justify-content: flex-start;
-    position: absolute;
+    position: relative; /* Cambia de absolute a relative */
+    padding-top: 0px; /* Ajusta el espacio para el encabezado */
     right: 0px;
     left: 0px;
     bottom: 0px;

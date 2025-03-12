@@ -22,7 +22,7 @@
   gap: 100px;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 2841px;
+  min-height: 100vh; /* Asegura que el contenedor tenga al menos el tamaño de la ventana */
   position: relative;
 }
 .head {
@@ -34,6 +34,7 @@
   align-self: stretch;
   flex-shrink: 0;
   min-width: 1115px;
+  height: 100px; /* Altura fija para el encabezado */
   position: relative;
 }
 .frame-1 {
@@ -79,16 +80,9 @@
   position: relative;
 }
 .body {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  align-items: flex-end;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex: 1;
-  min-width: 1115px;
-  min-height: 1745px;
-  position: relative;
+  transition: height 0.5s ease;
+  min-height: calc(100vh - 100px); /* Asegura que el cuerpo tenga al menos el tamaño de la ventana menos la altura del encabezado */
+  padding-top: 100px; /* Espacio para el encabezado */
 }
 .footer {
   background: #2c2c2c;
@@ -101,6 +95,7 @@
   flex-shrink: 0;
   min-width: 1115px;
   position: relative;
+  margin-top: auto; /* Asegura que el pie de página esté al final del contenido */
 }
 .frame-27 {
   padding: 0px 30px 0px 30px;
