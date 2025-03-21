@@ -2,27 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
 
-  <style>
-    a, button, input, select, h1, h2, h3, h4, h5, * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: none;
-      text-decoration: none;
-      background: none;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    menu, ol, ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
   <title>Web_Accesorios</title>
 </head>
 <body>
@@ -31,24 +13,27 @@
 <div class="main-frame">
 
   <!-- Inicio: Encabezado -->
-  <header class="head">
-    <div class="frame-1">
-      <img class="logo-accesorios-light-1" src="../img/logo-accesorios-light-10.png" />
-    </div>
-    <nav class="frame-6">
-      <div class="boton-head">
-        <a href="#" data-page="inicio.html" class="nav-link inicio">Inicio</a>
-      </div>
-      <div class="boton-head">
-          <a href="#" data-page="accesorios.html" class="nav-link inicio">Accesorios</a>
-      </div>
-      <div class="boton-head">
-        <a href="#" data-page="nosotros.html" class="nav-link inicio">Nosotros</a>
-      </div>
-      <div class="boton-head">
-        <a href="#" data-page="contacto.html" class="nav-link inicio">Contacto</a>
-      </div>
+  <header id="header">
+    <!-- Logo positioned on the left corner -->
+    <img src="../img/logo-accesorios-light-10.png" alt="Logo de Mi Página Web" id="logo">
+
+    <!-- Navigation menu with links to different sections of the website -->
+    <nav>
+      <ul>
+        <li><a href="#" data-page="inicio.html" class="nav-link">Inicio</a></li>
+        <li><a href="#" data-page="accesorios.html" class="nav-link">Accesorios</a></li>
+        <li><a href="#" data-page="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="#" data-page="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
     </nav>
+
+    <!-- Theme Toggle Switch -->
+    <div class="theme-toggle">
+      <label class="switch" aria-label="Cambiar tema (Claro/Oscuro)">
+        <input type="checkbox" id="theme-switch">
+        <span class="slider"></span>
+      </label>
+    </div>
   </header>
   <!-- Fin: Encabezado -->
 
@@ -59,26 +44,33 @@
   <!-- Fin: Contenido principal -->
 
   <!-- Inicio: Pie de página -->
-  <footer class="footer">
-    <div class="frame-27">
-      <div class="frame-25">
-        <div class="frame-39"><a href="#H">TotesBGA Financiación</a></div>
-        <div class="frame-40"><a href="#">Cookie Settings</a></div>
-        <div class="frame-41"><a href="#">Acerca de</a></div>
-        <div class="frame-42"><a href="#">Privacidad</a></div>
-        <div class="frame-43"><a href="#">Nuestro Sistema</a></div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>TOTES BGA</h3>
+        <p>DCalle 27 # Carrera 19 – 50 </p>
+        <p>Bucaramanga, Santander</p>
       </div>
-      <div class="frame-26">
-        <p class="pol-tica-de-protecci-n">
-          Política de Protección De Datos Personales
-        </p>
-        <p class="_2025-totes-bga">
-          © 2025. TotesBGA Colombia. Todos los derechos reservados
-        </p>
+
+      <div class="footer-column">
+        <h3>CONSORCIO</h3>
+        <p><a href="assets/documents/POLITICA_DE_TRATAMIENTO_DE_DATOS_PERSONALES_DEL_CONSORCIO_TOTES_BGA_PARA_TERCEROS.pdf" target="_blank">Política de Tratamiento de Datos Personales</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h3>SÍGUENOS</h3>
+        <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="../img/facebook_logo.png" alt="Facebook"></a>
+        <a href="https://www.youtube.com/?app=desktop&hl=es" target="_blank"><img src="../img/youtube_logo.png" alt="Instagram"></a>
+        <a href="https://co.linkedin.com/" target="_blank"><img src="../img/linkedin_logo.png" alt="Twitter"></a>
       </div>
     </div>
-    <div class="frame-13">
-      <img class="logo-accesorios-light-2" src="../img/logo-accesorios-light-10.png" />
+
+    <!-- Horizontal line inside the footer -->
+    <div class="footer-divider"></div>
+
+    <!-- Copyright Message -->
+    <div class="footer-copyright">
+      © 2025 TOTES BGA. Todos los derechos reservados.
     </div>
   </footer>
   <!-- Fin: Pie de página -->
@@ -87,5 +79,3 @@
 <script src="../js/app.js"></script>
 </body>
 </html>
-
-

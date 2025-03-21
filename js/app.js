@@ -53,3 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const initialPage = location.hash ? location.hash.substring(1) : "inicio.html";
     cargarPagina(initialPage, false);
 });
+document.addEventListener('scroll', () => {
+    const header = document.getElementById('header'); // Selects the header element by its ID
+
+    // Adds or removes the 'scrolled' class based on the scroll position
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled'); // Adds the 'scrolled' class if the scroll position is greater than 50 pixels
+    } else {
+        header.classList.remove('scrolled'); // Removes the 'scrolled' class if the scroll position is 50 pixels or less
+    }
+});

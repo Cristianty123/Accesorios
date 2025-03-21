@@ -1,0 +1,462 @@
+.contacto,
+.contacto * {
+    box-sizing: border-box;
+}
+.contacto {
+
+    height: 1100px;
+
+    overflow: hidden;
+}
+.frame-103 {
+    display: flex;
+    flex-direction: column;
+    gap: 95px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1087px;
+    position: absolute;
+    left: calc(50% - 532.5px);
+    top: 84px;
+}
+.frame-80 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 208px;
+    position: relative;
+}
+.frame-78 {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.contactate-con-nosotros {
+    color: #ff335f;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frame-79 {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.en-caso-de-que-requieras-alguna-ayuda-buscanos-por-aqui {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins-ExtraLight", sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frame-102 {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 933px;
+    position: relative;
+}
+.frame-100 {
+    display: flex;
+    flex-direction: column;
+    gap: 132px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+}
+.frame-7 {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.direcci-n {
+    color: #ff335f;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.kil-metro-7-v-a-piedecuesta-floridablanca-santander-colombia {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-ExtraLight", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-84 {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.telefono {
+    color: #ff335f;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+._57-607-6796220 {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-ExtraLight", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-85 {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.horarios-de-atenci-n {
+    color: #ff335f;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.lunes-a-viernes-de-7-30-a-m-a-12-30-p-m-1-30-p-m-a-5-30-p-m {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-ExtraLight", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-101 {
+    display: flex;
+    flex-direction: column;
+    gap: 133px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 548px;
+    position: relative;
+}
+.frame-83 {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.frame-81 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.nombre {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.nombre2 {
+    color: #747474;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.line-1 {
+    margin-top: -1px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px 0 0 0;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 0px;
+    position: relative;
+}
+.telefono2 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.tel-fono {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.n-mero-de-tel-fono {
+    color: #747474;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.correo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.correo-electr-nico {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.micorreo-ejemplo-com {
+    color: #747474;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-98 {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.departamento {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.sugerencias {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-97 {
+    background: rgba(217, 217, 217, 0.02);
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 180px;
+    position: relative;
+}
+.cotizar-agendar-cita {
+    color: #747474;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-9 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+.rectangle-85 {
+    background: rgba(217, 217, 217, 0.02);
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+.autorizo-el-tratamiento-de-mis-datos-personales-de-acuerdo-con-los-t-rminos-establecidos-en-la-pol-tica-de-privacidad {
+    color: #ffffff;
+    text-align: left;
+    font-family: "-", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    width: 498px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.autorizo-el-tratamiento-de-mis-datos-personales-de-acuerdo-con-los-t-rminos-establecidos-en-la-pol-tica-de-privacidad-span {
+    color: #ffffff;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+.autorizo-el-tratamiento-de-mis-datos-personales-de-acuerdo-con-los-t-rminos-establecidos-en-la-pol-tica-de-privacidad-span2 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+.frame-99 {
+    background: #2c2c2c;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 167px;
+    height: 45px;
+    position: relative;
+}
+.confirmar {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
