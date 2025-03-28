@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (url === "inicio.html") {
                     agregarEventosInicio(); // agrega los eventos de la pagina de inicio
                 }
+                if (url === "categoria_parqueo.html") {
+                    agregarEventosCategoriaParqueo();
+                }
             })
             .catch(error => console.error("Error al cargar la página:", error));
     }
@@ -27,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
             cargarPagina(page);
         });
     });
-
     // Manejar clics en los botones de categorías
     function agregarEventosInicio() {
         const botonesCategoria = document.querySelectorAll(".boton-categoria");
@@ -39,6 +41,62 @@ document.addEventListener("DOMContentLoaded", function () {
                     cargarPagina(pagina);
                 }
             });
+        });
+    }
+    // Función para agregar eventos y accesorios en categoria_parqueo.html se uso json de prueba
+    function agregarEventosCategoriaParqueo() {
+        const accesorios = [
+            {
+                "nombre": "Kit cámara reversa + arnés Mazda 3 Sedán",
+                "precio": 305000,
+                "imagen": "image-480.png",
+                "nuevo": true
+            },
+            {
+                "nombre": "Cable conector cámara reversa",
+                "precio": 150000,
+                "imagen": "image-481.png",
+                "nuevo": true
+            },
+            {
+                "nombre": "Cámara reversa Volkswagen Jetta",
+                "precio": 110000,
+                "imagen": "image-482.png",
+                "nuevo": true
+            },
+            {
+                "nombre": "Cámara reversa Volkswagen Jetta",
+                "precio": 110000,
+                "imagen": "image-482.png",
+                "nuevo": true
+            },
+            {
+                "nombre": "Cámara reversa Volkswagen Jetta",
+                "precio": 110000,
+                "imagen": "image-482.png",
+                "nuevo": true
+            }
+        ];
+
+        const panelAccesorios = document.querySelector(".panel-accesorios");
+
+        if (!panelAccesorios) return; // Evitar errores si la página no tiene este contenedor
+
+        panelAccesorios.innerHTML = ""; // Limpiar contenido previo
+
+        accesorios.forEach(accesorio => {
+            const accesorioHTML = `
+            <div class="accesorio">
+                <img class="image-48" src="${accesorio.imagen}" alt="${accesorio.nombre}" />
+                <div class="descripcion">${accesorio.nombre}</div>
+                ${accesorio.nuevo ? '<div class="nuevo">Nuevo</div>' : ''}
+                <div class="precio">Cop $${accesorio.precio.toLocaleString("es-CO")}</div>
+                <div class="frame-114">
+                    <div class="informacion">INFORMACION</div>
+                </div>
+            </div>
+            `;
+            panelAccesorios.innerHTML += accesorioHTML;
         });
     }
 

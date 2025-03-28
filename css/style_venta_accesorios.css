@@ -1,0 +1,153 @@
+.acc-parqueo-pag-4,
+.acc-parqueo-pag-4 * {
+    box-sizing: border-box;
+}
+.acc-parqueo-pag-4 {
+    min-height: 100vh; /* 🔹 Ocupa al menos toda la pantalla */
+    height: auto; /* 🔹 Se ajusta al contenido */
+    overflow: visible; /* 🔹 Permite crecimiento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.los-mejores-accesorios-de-parqueo {
+    color: #ff335f;
+    text-align: center;
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-size: 49.07px;
+    font-weight: 600;
+    position: relative;
+    width: 100%; /* Para que se mantenga centrado */
+    max-width: 727.81px;
+    height: auto;
+    margin: 50px auto 0 auto; /* Margen superior dinámico */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ellipse-2 {
+    background: rgba(217, 217, 217, 0);
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgba(217, 217, 217, 0.1);
+    border-width: 36.03px;
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    left: -200.5px;
+    bottom: 44.59%;
+    top: 18%;
+}
+.ellipse-3 {
+    background: rgba(217, 217, 217, 0);
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgba(217, 217, 217, 0.1);
+    border-width: 36.03px;
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    right: calc(-100px - 20vw); /* 🔹 Ajustado para que no se salga demasiado */
+    bottom: -50%; /* 🔹 Siempre pegado a la parte baja */
+}
+.panel-accesorios {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 93px;
+    row-gap: 79px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 1125.8px;
+    margin-top: 50px; /* 🔹 Espacio en vez de top fijo */
+    position: relative; /* 🔹 No usa absolute */
+}
+.accesorio {
+    background: #2c2c2c;
+    border-radius: 20px;
+    padding: 12px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    height: auto; /* 🔹 Permite que crezca según el contenido */
+    max-width: 250px;
+    width: fit-content;
+    position: relative;
+}
+.image-48 {
+    border-radius: 20px;
+    flex-shrink: 0;
+    width: 219.48px;
+    height: 130.21px;
+    position: relative;
+    object-fit: cover;
+    aspect-ratio: 219.48/130.21;
+}
+.descripcion {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex-grow: 1; /* 🔹 Permite que el texto ocupe el espacio disponible sin desbordar */
+    display: flex;
+    align-items: center; /* 🔹 Centra el texto verticalmente si hay espacio */
+    justify-content: center;
+}
+.nuevo {
+    color: #ff335f;
+    text-align: center;
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-size: 18.39999771118164px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.precio {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 24.5333309173584px;
+    font-weight: 500;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frame-114 {
+    background: #c0c0c0;
+    border-radius: 45.23px;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 196px;
+    position: relative;
+}
+.informacion {
+    color: #000000;
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 22.999998092651367px;
+    font-weight: 500;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
