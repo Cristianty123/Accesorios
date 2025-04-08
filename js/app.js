@@ -45,59 +45,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Función para agregar eventos y accesorios en categoria_parqueo.html se uso json de prueba
     function agregarEventosCategoriaParqueo() {
-        const accesorios = [
-            {
-                "nombre": "Kit cámara reversa + arnés Mazda 3 Sedán",
-                "precio": 305000,
-                "imagen": "image-480.png",
-                "nuevo": true
-            },
-            {
-                "nombre": "Cable conector cámara reversa",
-                "precio": 150000,
-                "imagen": "image-481.png",
-                "nuevo": true
-            },
-            {
-                "nombre": "Cámara reversa Volkswagen Jetta",
-                "precio": 110000,
-                "imagen": "image-482.png",
-                "nuevo": true
-            },
-            {
-                "nombre": "Cámara reversa Volkswagen Jetta",
-                "precio": 110000,
-                "imagen": "image-482.png",
-                "nuevo": true
-            },
-            {
-                "nombre": "Cámara reversa Volkswagen Jetta",
-                "precio": 110000,
-                "imagen": "image-482.png",
-                "nuevo": true
-            }
-        ];
-
         const panelAccesorios = document.querySelector(".panel-accesorios");
 
-        if (!panelAccesorios) return; // Evitar errores si la página no tiene este contenedor
+        if (!panelAccesorios) return;
 
-        panelAccesorios.innerHTML = ""; // Limpiar contenido previo
+        panelAccesorios.innerHTML = ""; // Limpia antes de cargar
 
-        accesorios.forEach(accesorio => {
-            const accesorioHTML = `
-            <div class="accesorio">
-                <img class="image-48" src="${accesorio.imagen}" alt="${accesorio.nombre}" />
-                <div class="descripcion">${accesorio.nombre}</div>
-                ${accesorio.nuevo ? '<div class="nuevo">Nuevo</div>' : ''}
-                <div class="precio">Cop $${accesorio.precio.toLocaleString("es-CO")}</div>
-                <div class="frame-114">
-                    <div class="informacion">INFORMACION</div>
+        // URL de tu backend: cambia si tu backend corre en otra IP o puerto
+        const url = "http://localhost:8080/items/page?page=1";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const accesorios = data.items; // 👈 Suponiendo que el JSON tiene una propiedad "items"
+
+                accesorios.forEach(accesorio => {
+                    const accesorioHTML = `
+                <div class="accesorio">
+                    <img class="image-48" src="${accesorio.imageUrl || 'default.png'}" alt="${accesorio.name}" />
+                    <div class="descripcion">${accesorio.name}</div>
+                    <div class="nuevo">Nuevo</div>
+                    <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
+                    <div class="frame-114">
+                        <div class="informacion">INFORMACION</div>
+                    </div>
                 </div>
-            </div>
-            `;
-            panelAccesorios.innerHTML += accesorioHTML;
-        });
+                `;
+                    panelAccesorios.innerHTML += accesorioHTML;
+                });
+            })
+            .catch(error => {
+                console.error("Error al cargar los accesorios:", error);
+                panelAccesorios.innerHTML = "<p>Error al cargar los accesorios.</p>";
+            });
     }
 
     // Manejar el botón de atrás/adelante del navegador
