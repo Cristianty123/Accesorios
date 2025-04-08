@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const contenido = document.getElementById("contenido");
     const links = document.querySelectorAll(".nav-link");
     const botonesCategoria = document.querySelectorAll(".boton-categoria");
+    const tipoToItemTypeId = {
+        parqueo: "PARQ",
+        externos: "EXT",
+        internos: "INTE",
+        luces_led: "LUCES",
+        elevavidrios: "MOD_ELEVA",
+        audio: "AUDIO"
+    };
 
     // Función para cargar contenido dinámico
     function cargarPagina(url, agregarHistorial = true) {
@@ -15,8 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (url === "inicio.html") {
                     agregarEventosInicio(); // agrega los eventos de la pagina de inicio
                 }
-                if (url === "categoria_parqueo.html") {
-                    agregarEventosCategoriaParqueo();
+                if (url.startsWith("venta_accesorios.html")) {
+                    const params = new URLSearchParams(url.split("?")[1]);
+                    const tipo = params.get("tipo"); // será null si no hay tipo
+                    agregarEventosMostrarAccesorios(tipo); // tipo puede ser null o string
                 }
             })
             .catch(error => console.error("Error al cargar la página:", error));
@@ -37,39 +47,51 @@ document.addEventListener("DOMContentLoaded", function () {
             boton.addEventListener("click", function () {
                 const tipo = this.getAttribute("data-tipo");
                 if (tipo) {
-                    const pagina = `categoria_${tipo.toLowerCase()}.html`;
+                    const pagina = `venta_accesorios.html?tipo=${tipo}`;
                     cargarPagina(pagina);
                 }
             });
         });
     }
-    // Función para agregar eventos y accesorios en categoria_parqueo.html se uso json de prueba
-    function agregarEventosCategoriaParqueo() {
+    // Función para agregar eventos y accesorios en venta_accesorios.html se uso json de prueba
+    function agregarEventosMostrarAccesorios(tipo) {
+        const itemTypeId = tipoToItemTypeId[tipo]; // será undefined si tipo es null o no está en el mapa
         const panelAccesorios = document.querySelector(".panel-accesorios");
+        const titulo = document.querySelector(".titulo-categoria");
 
         if (!panelAccesorios) return;
 
-        panelAccesorios.innerHTML = ""; // Limpia antes de cargar
+        // Cambiar el título dinámicamente solo si hay tipo
+        if (titulo) {
+            if (tipo && tipoToItemTypeId[tipo]) {
+                const textoTitulo = tipo.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase());
+                titulo.textContent = `Los mejores accesorios de ${textoTitulo}`;
+            } else {
+                titulo.textContent = "Todos los accesorios disponibles";
+            }
+        }
 
-        // URL de tu backend: cambia si tu backend corre en otra IP o puerto
-        const url = "http://localhost:8080/items/page?page=1";
+        panelAccesorios.innerHTML = ""; // Limpiar
+
+        // Construir URL de backend según si hay itemTypeId
+        const baseUrl = "http://localhost:8080/items/page?page=1";
+        const url = itemTypeId ? `${baseUrl}&itemTypeId=${itemTypeId}` : baseUrl;
 
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const accesorios = data.items; // 👈 Suponiendo que el JSON tiene una propiedad "items"
-
+                const accesorios = data.items || [];
                 accesorios.forEach(accesorio => {
                     const accesorioHTML = `
-                <div class="accesorio">
-                    <img class="image-48" src="${accesorio.imageUrl || 'default.png'}" alt="${accesorio.name}" />
-                    <div class="descripcion">${accesorio.name}</div>
-                    <div class="nuevo">Nuevo</div>
-                    <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
-                    <div class="frame-114">
-                        <div class="informacion">INFORMACION</div>
+                    <div class="accesorio">
+                        <img class="image-48" src="http://localhost:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
+                        <div class="descripcion">${accesorio.name}</div>
+                        <div class="nuevo">Nuevo</div>
+                        <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
+                        <div class="frame-114">
+                            <div class="informacion">INFORMACION</div>
+                        </div>
                     </div>
-                </div>
                 `;
                     panelAccesorios.innerHTML += accesorioHTML;
                 });
@@ -79,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 panelAccesorios.innerHTML = "<p>Error al cargar los accesorios.</p>";
             });
     }
-
     // Manejar el botón de atrás/adelante del navegador
     window.onpopstate = function (event) {
         if (event.state && event.state.page) {
