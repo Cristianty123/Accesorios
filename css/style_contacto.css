@@ -460,3 +460,27 @@
     align-items: center;
     justify-content: center;
 }
+/* Aplica a todos los inputs, textareas y selects dentro de .contacto */
+.contacto input,
+.contacto textarea,
+.contacto select {
+    background: transparent; /* Fondo transparente */
+    border: none;            /* Sin bordes */
+    outline: none;           /* Sin contorno al enfocar */
+    color: #ffffff;          /* Color de texto según diseño (ajusta si es necesario) */
+    font-family: "Poppins-Light", sans-serif; /* Fuente consistente con tu diseño */
+}
+
+/* Opcional: Agrega un estilo en el estado focus para indicar al usuario que el campo está activo */
+.contacto input:focus,
+.contacto textarea:focus,
+.contacto select:focus {
+    /* Puedes optar por añadir una línea inferior o un cambio de color sutil, por ejemplo: */
+    border-bottom: 1px solid #ff335f;
+}
+
+/* Si usas placeholders, asegúrate que su estilo combine */
+.contacto ::placeholder {
+    color: #747474;
+    opacity: 1;
+}
