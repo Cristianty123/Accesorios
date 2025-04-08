@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         panelAccesorios.innerHTML = ""; // Limpiar
 
         // Construir URL de backend según si hay itemTypeId
-        const baseUrl = "http://localhost:8080/items/page?page=1";
+        const baseUrl = "http://192.168.28.131:8080/items/page?page=1";
         const url = itemTypeId ? `${baseUrl}&itemTypeId=${itemTypeId}` : baseUrl;
 
         fetch(url)
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 accesorios.forEach(accesorio => {
                     const accesorioHTML = `
                     <div class="accesorio">
-                        <img class="image-48" src="http://localhost:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
+                        <img class="image-48" src="http://192.168.28.131:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
                         <div class="descripcion">${accesorio.name}</div>
                         <div class="nuevo">Nuevo</div>
                         <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
