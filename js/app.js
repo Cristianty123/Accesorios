@@ -31,6 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     const host = "localhost";
+    function igualarAlturaAccesorios() {
+        const tarjetas = document.querySelectorAll(".accesorio");
+
+        let maxHeight = 0;
+        tarjetas.forEach(card => {
+            card.style.height = "auto"; // Reinicia para evitar acumulaciones
+            const altura = card.offsetHeight;
+            if (altura > maxHeight) {
+                maxHeight = altura;
+            }
+        });
+
+        tarjetas.forEach(card => {
+            card.style.height = maxHeight + "px";
+        });
+    }
     // Función para cargar contenido dinámico
     function cargarPagina(url, agregarHistorial = true) {
         fetch(url)
@@ -174,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                     paginacion.appendChild(btnSiguiente);
                 }
+                igualarAlturaAccesorios();
 
             })
             .catch(error => {
