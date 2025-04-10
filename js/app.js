@@ -16,12 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const item = JSON.parse(itemData);
         document.getElementById("nombre").textContent = item.name;
+        document.getElementById("categoria").textContent = item.itemtype.name;
         document.getElementById("imagen").src = `http://${host}:8080/uploads/${item.imageurl}`;
         document.getElementById("descripcion").textContent = item.description;
         document.getElementById("stock").innerHTML = item.stock > 0
             ? `✅ <span style="color: green;">En stock:</span> ${item.stock} unidades`
             : `❌ <span style="color: red;">Agotado</span>`;
-        document.getElementById("precio").textContent = `💰 Precio: $${Number(item.sellingprice).toLocaleString("es-CO")}`;
+        document.getElementById("precio").textContent = `$${Number(item.sellingprice).toLocaleString("es-CO")}`;
 
         if (item.free_shipping) {
             document.getElementById("envio").textContent = "🚚 Envío gratis";
