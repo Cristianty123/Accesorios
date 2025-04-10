@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accesorios</title>
     <link rel="stylesheet" href="../css/style_venta_accesorios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="accesorios">
-    <div class="titulo-categoria">Los mejores accesorios </div>
-    <div class="ellipse-2"></div>
-    <div class="ellipse-3"></div>
+    <div class="contenedor-titulo">
+        <h1 class="titulo-categoria">Los mejores accesorios</h1>
+        <div class="decoracion decoracion-izquierda"></div>
+        <div class="decoracion decoracion-derecha"></div>
+    </div>
+
     <div class="panel-accesorios"></div>
+
     <div id="paginacion" class="paginacion"></div>
+
+    <div class="filtros">
+        <button class="btn-filtro activo">Todos</button>
+        <button class="btn-filtro" data-tipo="parqueo">Parqueo</button>
+        <button class="btn-filtro" data-tipo="externos">Externos</button>
+        <button class="btn-filtro" data-tipo="internos">Internos</button>
+        <button class="btn-filtro" data-tipo="luces_led">Luces LED</button>
+        <button class="btn-filtro" data-tipo="elevavidrios">Elevavidrios</button>
+        <button class="btn-filtro" data-tipo="audio">Audio</button>
+    </div>
 </div>
 </body>
 </html>

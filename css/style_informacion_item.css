@@ -1,23 +1,54 @@
+/* Estilos base */
 .card {
-    margin: 40px auto;
+    margin: 20px auto;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 20px;
     background: #2c2c2c;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     padding: 30px;
     gap: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     animation: fadeIn 0.6s ease-out forwards;
-    flex-direction: column; /* <- cambio importante */
-    align-items: center;
+    flex-direction: column;
+}
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.btn-filtro {
+    background: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background: #3c3c3c;
+}
+
+.btn-filtro.activo {
+    background: #ff335f;
+    font-weight: 600;
 }
 
 .card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes fadeIn {
@@ -26,96 +57,195 @@
     }
 }
 
+/* Contenedor de imagen */
 .image-container {
+    position: relative;
     width: 100%;
     margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 500px; /* o el tamaño que desees */
     height: auto;
-    border-radius: 12px;
+    max-height: 400px;
+    object-fit: cover;
     display: block;
-    margin: 0 auto; /* opcional si quieres que quede centrada */
+    transition: transform 0.5s ease;
 }
 
+.card:hover .image-container img {
+    transform: scale(1.03);
+}
+
+.badge-categoria {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff335f;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de información */
 .info-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex: 1;
-    max-width: 500px;      /* ← igual que la imagen */
-    margin: 0 auto;        /* ← para centrarlo horizontalmente */
 }
 
 .info-container h2 {
     color: #ff335f;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.categoria-boton-forma {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.categoria-boton-forma p {
+    font-size: 16px;
+    color: #cccccc;
+    margin: 0;
+}
+
+.categoria-boton-forma i {
+    color: #ff335f;
+}
+
+.descripcion-container {
+    display: flex;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-.categoria-boton-forma span,
-.descripcion,
-.stock,
-.precio {
-    font-size: 15px;
-    color: #cccccc;
-    margin: 5px 0;
+.icono-descripcion {
+    color: #ff335f;
+    margin-top: 3px;
 }
-.categoria-boton-forma{
-    margin-bottom: 40px;
+
+.descripcion {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.detalles-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detalle-item i {
+    color: #ff335f;
+    font-size: 16px;
 }
 
 .stock {
     color: #00c853;
-    margin-top: 20px;
     font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+}
+
+.envio {
+    font-size: 15px;
+    color: #ffab00;
+    margin: 0;
+}
+
+.precio-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .precio {
     color: #ffffff;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 25px;
-}
-
-.envio {
-    font-size: 16px;
-    color: #ffab00;
-    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
 }
 
 .btn-comprar {
-    background-color: #c0c0c0;
-    color: black;
+    background-color: #ff335f;
+    color: white;
     border: none;
-    padding: 10px 100px;
-    border-radius: 6px;
-    font-size: 15px;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 20px;
     transition: all 0.3s ease;
-    align-self: center;
-    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(255, 51, 95, 0.3);
 }
 
 .btn-comprar:hover {
-    background-color: #ff335f;
-    color: white;
+    background-color: #e62a54;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 51, 95, 0.4);
 }
 
 /* Responsivo */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .info-container h2 {
+        font-size: 24px;
+    }
+
+    .precio {
+        font-size: 24px;
     }
 
     .btn-comprar {
-        padding: 10px 40px;
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .precio-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .badge-categoria {
+        font-size: 12px;
+        padding: 4px 12px;
     }
 }

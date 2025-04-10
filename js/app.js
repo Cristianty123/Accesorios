@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const item = JSON.parse(itemData);
         document.getElementById("nombre").textContent = item.name;
         document.getElementById("categoria").textContent = item.itemtype.name;
+        document.getElementById("categoria-texto").textContent = item.itemtype.name;
         document.getElementById("imagen").src = `http://${host}:8080/uploads/${item.imageurl}`;
         document.getElementById("descripcion").textContent = item.description;
         document.getElementById("stock").innerHTML = item.stock > 0
@@ -102,9 +103,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const panelAccesorios = document.querySelector(".panel-accesorios");
         const titulo = document.querySelector(".titulo-categoria");
         const paginacion = document.getElementById("paginacion");
+        const filtrosContainer = document.querySelector(".filtros");
 
         if (!panelAccesorios || !paginacion) return;
 
+        // Limpiar completamente el contenido antes de cargar nuevos datos
+        panelAccesorios.innerHTML = "";
+
+        // Limpiar paginación pero mantener los botones de filtro
+        while (paginacion.firstChild) {
+            paginacion.removeChild(paginacion.firstChild);
+        }
+
+        // Actualizar título
         if (titulo) {
             if (tipo && tipoToItemTypeId[tipo]) {
                 const textoTitulo = tipo.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase());
@@ -113,8 +124,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 titulo.textContent = "Todos los accesorios disponibles";
             }
         }
-        panelAccesorios.innerHTML = "";
-        paginacion.innerHTML = "";
+
+        // Configurar filtros si existen
+        if (filtrosContainer) {
+            // Actualizar clase activa en todos los botones
+            document.querySelectorAll('.btn-filtro').forEach(boton => {
+                boton.classList.remove('activo');
+                if (boton.getAttribute('data-tipo') === tipo) {
+                    boton.classList.add('activo');
+                } else if (!tipo && !boton.getAttribute('data-tipo')) {
+                    boton.classList.add('activo');
+                }
+
+                // Remover event listeners antiguos primero
+                boton.replaceWith(boton.cloneNode(true));
+            });
+
+            // Agregar nuevos event listeners
+            document.querySelectorAll('.btn-filtro').forEach(boton => {
+                boton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const nuevoTipo = this.getAttribute('data-tipo');
+                    agregarEventosMostrarAccesorios(nuevoTipo);
+                });
+            });
+        }
 
         const baseUrl = `http://${host}:8080/items/page?page=${pagina}`;
         const url = itemTypeId ? `${baseUrl}&itemTypeId=${itemTypeId}` : baseUrl;
@@ -123,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => {
                 if (!response.ok) {
                     return response.json().then(errorData => {
-                        throw errorData; // Lanza el JSON con el mensaje de error
+                        throw errorData;
                     });
                 }
                 return response.json();
@@ -131,24 +165,31 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 const accesorios = data.items || [];
                 const totalPaginas = data.totalPages || 1;
+                const currentPage = data.currentPage || 1;
+                const pagesToShow = data.pagesToShow || [];
 
                 if (accesorios.length === 0) {
                     panelAccesorios.innerHTML = "<p>No se encontraron accesorios para esta página.</p>";
-                    return; // no mostrar paginación
+                    return;
                 }
+
+                // Construir HTML de accesorios
+                let accesoriosHTML = '';
                 accesorios.forEach(accesorio => {
-                    const accesorioHTML = `
-                    <div class="accesorio">
-                        <img class="image-48" src="http://${host}:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
-                        <div class="descripcion">${accesorio.name}</div>
-                        <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
-                        <div class="frame-114">
-                            <div class="informacion" data-id="${accesorio.id}">INFORMACION</div>
-                        </div>
+                    accesoriosHTML += `
+                <div class="accesorio">
+                    <img class="image-48" src="http://${host}:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
+                    <div class="descripcion">${accesorio.name}</div>
+                    <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
+                    <div class="frame-114">
+                        <div class="informacion" data-id="${accesorio.id}">INFORMACION</div>
                     </div>
+                </div>
                 `;
-                    panelAccesorios.innerHTML += accesorioHTML;
                 });
+                panelAccesorios.innerHTML = accesoriosHTML;
+
+                // Configurar eventos para botones de información
                 const botonesInformacion = document.querySelectorAll(".informacion");
                 botonesInformacion.forEach(boton => {
                     boton.addEventListener("click", () => {
@@ -160,49 +201,57 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     });
                 });
-                // Botón "Anterior"
-                if (pagina > 1) {
+
+                // Crear paginación basada en el JSON recibido
+                const fragmentPaginacion = document.createDocumentFragment();
+
+                // Botón "Anterior" (solo uno)
+                if (currentPage > 1) {
                     const btnAnterior = document.createElement("button");
                     btnAnterior.textContent = "<< Anterior";
-                    // no le ponemos "activo"
-                    btnAnterior.addEventListener("click", () => {
-                        agregarEventosMostrarAccesorios(tipo, pagina - 1);
+                    btnAnterior.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        agregarEventosMostrarAccesorios(tipo, currentPage - 1);
                     });
-                    paginacion.appendChild(btnAnterior);
+                    fragmentPaginacion.appendChild(btnAnterior);
                 }
 
-                // Botones numerados
-                for (let i = 1; i <= totalPaginas; i++) {
+                // Botones numerados (exactamente los que vienen en pagesToShow)
+                pagesToShow.forEach(pageNum => {
+                    const page = parseInt(pageNum);
                     const boton = document.createElement("button");
-                    boton.textContent = i;
-                    if (i === pagina) {
-                        boton.classList.add("activo"); // solo el actual
+                    boton.textContent = page;
+                    if (page === currentPage) {
+                        boton.classList.add("activo");
                     }
-                    boton.addEventListener("click", () => {
-                        agregarEventosMostrarAccesorios(tipo, i);
+                    boton.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        agregarEventosMostrarAccesorios(tipo, page);
                     });
-                    paginacion.appendChild(boton);
-                }
+                    fragmentPaginacion.appendChild(boton);
+                });
 
-                // Botón "Siguiente"
-                if (pagina < totalPaginas) {
+                // Botón "Siguiente" (solo uno)
+                if (currentPage < totalPaginas) {
                     const btnSiguiente = document.createElement("button");
                     btnSiguiente.textContent = "Siguiente >>";
-                    // no le ponemos "activo"
-                    btnSiguiente.addEventListener("click", () => {
-                        agregarEventosMostrarAccesorios(tipo, pagina + 1);
+                    btnSiguiente.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        agregarEventosMostrarAccesorios(tipo, currentPage + 1);
                     });
-                    paginacion.appendChild(btnSiguiente);
+                    fragmentPaginacion.appendChild(btnSiguiente);
                 }
-                igualarAlturaAccesorios();
 
+                // Agregar toda la paginación de una vez
+                paginacion.appendChild(fragmentPaginacion);
+
+                igualarAlturaAccesorios();
             })
             .catch(error => {
                 console.error("Error al cargar los accesorios:", error);
-                // Validamos si es error 404 específicamente
                 if (error.status === 404 && error.message === "La página seleccionada no tiene items.") {
                     panelAccesorios.innerHTML = "<p>No hay accesorios disponibles en esta página.</p>";
-                    paginacion.innerHTML = ""; // aseguramos limpiar la paginación
+                    paginacion.innerHTML = "";
                 } else {
                     panelAccesorios.innerHTML = "<p>Error al cargar los accesorios.</p>";
                     paginacion.innerHTML = "";

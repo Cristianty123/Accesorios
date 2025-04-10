@@ -6,22 +6,39 @@
     <title>Información del Accesorio</title>
     <link rel="stylesheet" href="../css/style_informacion_item.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_informacion_item.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="card">
     <div class="image-container">
         <img id="imagen" src="" alt="Imagen del accesorio" />
+        <div class="badge-categoria"><span id="categoria"></span></div>
     </div>
     <div class="info-container">
         <h2 id="nombre">Nombre del accesorio</h2>
-        <p class="categoria"><strong>Categoría:</strong> <span id="categoria"></span></p>
-        <p class="descripcion" id="descripcion"></p>
-        <p class="stock" id="stock"></p>
-        <p class="precio" id="precio"></p>
-        <p class="envio" id="envio"></p>
-        <button class="btn-comprar">Comprar</button>
+        <div class="categoria-boton-forma">
+            <p><i class="fas fa-tag"></i> <strong>Categoría:</strong> <span id="categoria-texto"></span></p>
+        </div>
+        <div class="descripcion-container">
+            <i class="fas fa-align-left icono-descripcion"></i>
+            <p class="descripcion" id="descripcion"></p>
+        </div>
+        <div class="detalles-container">
+            <div class="detalle-item">
+                <i class="fas fa-box-open"></i>
+                <p class="stock" id="stock"></p>
+            </div>
+            <div class="detalle-item">
+                <i class="fas fa-truck"></i>
+                <p class="envio" id="envio"></p>
+            </div>
+        </div>
+        <div class="precio-container">
+            <p class="precio" id="precio"></p>
+            <button class="btn-comprar">
+                <i class="fas fa-shopping-cart"></i> Comprar ahora
+            </button>
+        </div>
     </div>
 </div>
 </body>

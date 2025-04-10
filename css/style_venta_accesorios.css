@@ -1,188 +1,268 @@
-.accesorios,
-.accesorios * {
-    box-sizing: border-box;
+/* Estilos base */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
+
 .accesorios {
-    min-height: 100vh; /* 🔹 Ocupa al menos toda la pantalla */
-    height: auto; /* 🔹 Se ajusta al contenido */
-    overflow: visible; /* 🔹 Permite crecimiento */
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    min-height: 100vh;
 }
+
+.contenedor-titulo {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 .titulo-categoria {
     color: #ff335f;
-    text-align: center;
-    font-family: "Poppins-SemiBold", sans-serif;
-    font-size: 49.07px;
-    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 auto 30px;
     position: relative;
-    width: 100%; /* Para que se mantenga centrado */
-    max-width: 727.81px;
-    height: auto;
-    margin: 50px auto 0 auto; /* Margen superior dinámico */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    padding: 0 20px;
 }
-.ellipse-2 {
-    background: rgba(217, 217, 217, 0);
-    border-radius: 50%;
-    border-style: solid;
-    border-color: rgba(217, 217, 217, 0.1);
-    border-width: 36.03px;
-    width: 40%;
-    height: 80%;
+
+.titulo-categoria::after {
+    content: '';
     position: absolute;
-    left: -200.5px;
-    bottom: 44.59%;
-    top: 18%;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #ff335f;
+    border-radius: 2px;
 }
-.ellipse-3 {
-    background: rgba(217, 217, 217, 0);
-    border-radius: 50%;
-    border-style: solid;
-    border-color: rgba(217, 217, 217, 0.1);
-    border-width: 36.03px;
-    width: 40%;
-    height: 80%;
+
+.decoracion {
     position: absolute;
-    right: calc(-100px - 20vw); /* 🔹 Ajustado para que no se salga demasiado */
-    bottom: -50%; /* 🔹 Siempre pegado a la parte baja */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 51, 95, 0.2);
+    z-index: -1;
 }
+
+.decoracion-izquierda {
+    left: 10%;
+    top: -30px;
+}
+
+.decoracion-derecha {
+    right: 10%;
+    bottom: -30px;
+}
+
 .panel-accesorios {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 93px;
-    row-gap: 79px;
-    align-items: flex-start;
-    justify-content: center;
-    width: 1125.8px;
-    margin-top: 50px; /* 🔹 Espacio en vez de top fijo */
-    position: relative; /* 🔹 No usa absolute */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
 }
+
 .accesorio {
     background: #2c2c2c;
     border-radius: 20px;
-    padding: 12px 40px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    height: auto; /* 🔹 Permite que crezca según el contenido */
-    max-width: 250px;
-    width: fit-content;
+    transition: all 0.3s ease;
     position: relative;
+    overflow: hidden;
 }
+
 .accesorio:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 51, 95, 0.3);
 }
+
 .image-48 {
-    border-radius: 20px;
-    flex-shrink: 0;
-    width: 219.48px;
-    height: 130.21px;
-    position: relative;
+    width: 100%;
+    height: 180px;
     object-fit: cover;
-    aspect-ratio: 219.48/130.21;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
 }
+
+.accesorio:hover .image-48 {
+    transform: scale(1.05);
+}
+
 .descripcion {
     color: #ffffff;
-    text-align: center;
-    font-family: "Poppins-SemiBold", sans-serif;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 600;
-    position: relative;
-    display: block;
+    text-align: center;
+    margin: 10px 0;
+    flex-grow: 1;
     width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    flex-grow: 1; /* 🔹 Permite que el texto ocupe el espacio disponible sin desbordar */
-    display: flex;
-    align-items: center; /* 🔹 Centra el texto verticalmente si hay espacio */
-    justify-content: center;
 }
+
 .precio {
     color: #ffffff;
-    text-align: center;
-    font-family: "Poppins-Medium", sans-serif;
-    font-size: 24.5333309173584px;
-    font-weight: 500;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 15px 0;
+    color: #ff335f;
 }
-/* Estilo base */
+
 .frame-114 {
     background: #c0c0c0;
-    border-radius: 45.23px;
-    padding: 10px 0px 10px 0px;
+    border-radius: 30px;
+    width: 100%;
+    padding: 12px;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 196px;
-    position: relative;
-    transition: background 0.3s ease; /* transición suave */
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.accesorio:hover .frame-114 {
+    background: #ff335f;
 }
 
 .informacion {
     color: #000000;
-    text-align: center;
-    font-family: "Poppins-Medium", sans-serif;
-    font-size: 23px;
-    font-weight: 500;
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer; /* <- Esto es lo que pone el mouse como manito */
-    transition: color 0.3s ease; /* transición suave */
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-/* Efecto hover sobre el contenedor */
-.frame-114:hover {
-    background: #ff335f;
-}
-
-/* Cambiar el color del texto al pasar el mouse */
-.frame-114:hover .informacion {
+.accesorio:hover .informacion {
     color: #ffffff;
 }
+
+/* Filtros */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.btn-filtro {
+    background: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background: #3c3c3c;
+}
+
+.btn-filtro.activo {
+    background: #ff335f;
+    font-weight: 600;
+}
+
+/* Paginación */
 .paginacion {
     display: flex;
     justify-content: center;
-    margin: 30px auto 50px;
-    gap: 10px;
+    margin: 30px 0;
+    gap: 8px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .paginacion button {
     background-color: #2c2c2c;
     color: white;
-    font-family: "Poppins-SemiBold", sans-serif;
-    font-size: 16px;
     border: none;
     border-radius: 8px;
-    padding: 8px 14px;
+    padding: 8px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    text-align: center;
 }
 
 .paginacion button:hover {
-    background-color: #e02950
+    background-color: #ff335f;
 }
 
 .paginacion button.activo {
-    background-color: #e02950;
+    background-color: #ff335f;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .titulo-categoria {
+        font-size: 2rem;
+    }
+
+    .decoracion {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .panel-accesorios {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .titulo-categoria {
+        font-size: 1.8rem;
+    }
+
+    .decoracion {
+        display: none;
+    }
+
+    .filtros {
+        gap: 8px;
+    }
+
+    .btn-filtro {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel-accesorios {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-categoria {
+        font-size: 1.5rem;
+    }
+
+    .paginacion button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
 }
