@@ -8,89 +8,103 @@
 </head>
 <body>
 <!-- Sección principal con mensaje de bienvenida -->
-<section class="frame-36">
-    <div class="frame-11">
-        <h1 class="encuentra-los-accesorios-ideales-para-ti-al-mejor-precio">
-                <span>
-                    <span class="encuentra-los-accesorios-ideales-para-ti-al-mejor-precio-span">
-                        Encuentra los accesorios ideales para ti, al
-                    </span>
-                    <span class="encuentra-los-accesorios-ideales-para-ti-al-mejor-precio-span2">
-                        mejor precio
-                    </span>
-                </span>
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="hero-title-part1">Encuentra los accesorios ideales para ti, al</span>
+            <span class="hero-title-part2">mejor precio</span>
         </h1>
-        <div class="explora-nuestra-selecci-n-de-veh-culos-nuevos-y-usados-con-especificaciones-detalladas-fotos-en-alta-calidad-y-opciones-de-financiamiento">
+        <p class="hero-description">
             Explora nuestra selección de vehículos nuevos y usados, con
             especificaciones detalladas, fotos en alta calidad y opciones de
             financiamiento.
-        </div>
+        </p>
     </div>
-    <div class="frame-12">
-        <img class="image" src="../img/image0.png" alt="Imagen de bienvenida">
-    </div>
-</section>
-
-<!-- Sección de categorías de accesorios -->
-<section class="frame-14">
-    <div class="frame-37">
-        <h2 class="encuentra-el-accesorio-ideal">Encuentra el accesorio ideal</h2>
-    </div>
-    <div class="frame-38">
-        <div class="variedad-calidad-y-confiabilidad-en-cada-marca-que-ofrecemos">
-            Variedad, calidad y confiabilidad en cada marca que ofrecemos
-        </div>
+    <div class="hero-image-container">
+        <img class="hero-image" src="../img/image0.png" alt="Imagen de bienvenida">
     </div>
 </section>
 
-<!-- Sección de las categorias -->
-<section class="frame-23">
-    <div class="frame-44">
-        <div class="frame-16">
-            <img class="image2" src="../img/image1.png" alt="Parqueo">
+<!-- Sección de categorías -->
+<section class="categories-section">
+    <div class="section-container">
+        <div class="categories-header">
+            <h2 class="section-title">Encuentra el accesorio ideal</h2>
+            <p class="section-subtitle">Variedad, calidad y confiabilidad en cada marca que ofrecemos</p>
         </div>
-        <div class="categoria-parqueo">
-            <button class="boton-categoria" data-tipo="parqueo"><div class="texto-boton">Parqueo</div></button>
-        </div>
-    </div>
-    <div class="frame-45">
-        <div class="frame-20">
-            <img class="image2" src="../img/image2.png" alt="Externos">
-        </div>
-        <div class="categoria-externos">
-            <button class="boton-categoria" data-tipo="externos"><div class="texto-boton">Externos</div></button>
-        </div>
-    </div>
-    <div class="frame-46">
-        <div class="frame-21">
-            <img class="image3" src="../img/image3.png" alt="Internos">
-        </div>
-        <div class="categoria-internos">
-            <button class="boton-categoria" data-tipo="internos"><div class="texto-boton">Internos</div></button>
-        </div>
-    </div>
-    <div class="frame-47">
-        <div class="audi">
-            <img class="image2" src="../img/image4.png" alt="Luces LED">
-        </div>
-        <div class="categoria-luces-led">
-            <button class="boton-categoria" data-tipo="luces_led"><div class="texto-boton">Luces-Led</div></button>
-        </div>
-    </div>
-    <div class="frame-48">
-        <div class="jeep">
-            <img class="image2" src="../img/image5.png" alt="Módulo Elevavidrios">
-        </div>
-        <div class="categoria-modulo-elevavidrios">
-            <button class="boton-categoria" data-tipo="elevavidrios"><div class="texto-boton">Modulo Elevavidrios</div></button>
-        </div>
-    </div>
-    <div class="frame-49">
-        <div class="frame-22">
-            <img class="image2" src="../img/image6.png" alt="Audio">
-        </div>
-        <div class="categoria-audio">
-            <button class="boton-categoria" data-tipo ="audio"><div class="texto-boton">Audio</div></button>
+
+        <div class="categories-grid">
+            <!-- Categoría 1 -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img src="../img/image1.png" alt="Parqueo" class="category-image">
+                    <div class="category-overlay"></div>
+                </div>
+                <button class="category-button" data-tipo="parqueo">
+                    <span class="button-text">Parqueo</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Categoría 2 -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img src="../img/image2.png" alt="Externos" class="category-image">
+                    <div class="category-overlay"></div>
+                </div>
+                <button class="category-button" data-tipo="externos">
+                    <span class="button-text">Externos</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Categoría 3 -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img src="../img/image3.png" alt="Internos" class="category-image">
+                    <div class="category-overlay"></div>
+                </div>
+                <button class="category-button" data-tipo="internos">
+                    <span class="button-text">Internos</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Categoría 4 -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img src="../img/image4.png" alt="Luces LED" class="category-image">
+                    <div class="category-overlay"></div>
+                </div>
+                <button class="category-button" data-tipo="luces_led">
+                    <span class="button-text">Luces LED</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Categoría 5 -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img src="../img/image5.png" alt="Módulo Elevavidrios" class="category-image">
+                    <div class="category-overlay"></div>
+                </div>
+                <button class="category-button" data-tipo="elevavidrios">
+                    <span class="button-text">Módulo Elevavidrios</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Categoría 6 -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img src="../img/image6.png" alt="Audio" class="category-image">
+                    <div class="category-overlay"></div>
+                </div>
+                <button class="category-button" data-tipo="audio">
+                    <span class="button-text">Audio</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>

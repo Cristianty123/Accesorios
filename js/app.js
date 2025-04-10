@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Manejar clics en los botones de categorías
     function agregarEventosInicio() {
-        const botonesCategoria = document.querySelectorAll(".boton-categoria");
+        const botonesCategoria = document.querySelectorAll(".category-button");
         botonesCategoria.forEach(boton => {
             boton.addEventListener("click", function () {
                 const tipo = this.getAttribute("data-tipo");
