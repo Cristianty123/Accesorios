@@ -4,115 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style_contacto.css" />
-    <title>Contacto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Contacto | Automotores</title>
 </head>
 <body>
-<div class="contacto">
-    <div class="frame-103">
-        <div class="frame-80">
-            <div class="frame-78">
-                <div class="contactate-con-nosotros">Contactate con nosotros</div>
-            </div>
-            <div class="frame-79">
-                <div class="en-caso-de-que-requieras-alguna-ayuda-buscanos-por-aqui">
-                    En caso de que requieras alguna ayuda, buscános por aquí
+<div class="contact-container">
+    <div class="contact-header">
+        <h1>Contáctanos</h1>
+        <p class="subtitle">Estamos aquí para ayudarte. Envíanos tus consultas o visítanos en nuestro taller.</p>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="icon-circle">
+                    <i class="fas fa-map-marker-alt"></i>
                 </div>
+                <h3>Dirección</h3>
+                <p>Kilómetro 7, vía Piedecuesta<br>
+                    Floridablanca, Santander<br>
+                    Colombia</p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-circle">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Teléfono</h3>
+                <p>(+57) 607 6796220</p>
+                <p class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-circle">
+                    <i class="far fa-clock"></i>
+                </div>
+                <h3>Horario de atención</h3>
+                <p>Lunes a Viernes<br>
+                    7:30 a.m. - 12:30 p.m.<br>
+                    1:30 p.m. - 5:30 p.m.</p>
             </div>
         </div>
-        <div class="frame-102">
-            <div class="frame-100">
-                <div class="frame-7">
-                    <div class="direcci-n">Dirección</div>
-                    <div class="kil-metro-7-v-a-piedecuesta-floridablanca-santander-colombia">
-                        Kilómetro 7, vía Piedecuesta,
-                        <br />
-                        Floridablanca (Santander, Colombia)
+
+        <div class="contact-form-container">
+            <form action="procesar_formulario.php" method="POST" class="contact-form">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de contacto" required>
+                        <div class="input-line"></div>
                     </div>
                 </div>
-                <div class="frame-84">
-                    <div class="telefono">Teléfono</div>
-                    <div class="_57-607-6796220">(+57) 607 6796220</div>
+
+                <div class="input-group">
+                    <label for="correo">Correo electrónico *</label>
+                    <input type="email" id="correo" name="correo" placeholder="tu@email.com" required>
+                    <div class="input-line"></div>
                 </div>
-                <div class="frame-85">
-                    <div class="horarios-de-atenci-n">Horarios de atención</div>
-                    <div class="lunes-a-viernes-de-7-30-a-m-a-12-30-p-m-1-30-p-m-a-5-30-p-m">
-                        Lunes a viernes de 7:30 a. m. a 12:30 p. m. y de 1:30 p. m. a 5:30 p. m.
-                    </div>
+
+                <div class="input-group">
+                    <label for="tipoConsulta">Tipo de consulta</label>
+                    <select id="tipoConsulta" name="tipoConsulta">
+                        <option value="cotizar">Cotización</option>
+                        <option value="agendar">Agendar cita</option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="soporte">Soporte técnico</option>
+                    </select>
                 </div>
-            </div>
-            <div class="frame-101">
-                <form action="procesar_formulario.php" method="POST" class="contact-form">
-                    <div class="frame-83">
-                        <div class="frame-81">
-                            <label for="nombre" class="nombre">Nombre *</label>
-                            <input
-                                    type="text"
-                                    id="nombre"
-                                    name="nombre"
-                                    placeholder="Nombre"
-                                    required
-                            />
-                            <div class="line-1"></div>
-                        </div>
-                        <div class="telefono2">
-                            <label for="telefono" class="tel-fono">Teléfono *</label>
-                            <input
-                                    type="tel"
-                                    id="telefono"
-                                    name="telefono"
-                                    placeholder="Número de teléfono"
-                                    required
-                            />
-                            <div class="line-1"></div>
-                        </div>
-                        <div class="correo">
-                            <label for="correo" class="correo-electr-nico">Correo electrónico *</label>
-                            <input
-                                    type="email"
-                                    id="correo"
-                                    name="correo"
-                                    placeholder="micorreo@ejemplo.com"
-                                    required
-                            />
-                            <div class="line-1"></div>
-                        </div>
-                    </div>
-                    <div class="frame-98">
-                        <div class="departamento">
-                            <label for="sugerencias" class="sugerencias">Sugerencias *</label>
-                        </div>
-                        <div class="frame-97">
-                            <!-- Puedes agregar un select si deseas que el usuario elija entre opciones -->
-                            <select name="tipoConsulta" id="tipoConsulta">
-                                <option value="cotizar">Cotizar</option>
-                                <option value="agendar">Agendar cita</option>
-                            </select>
-                            <!-- Campo de texto para las sugerencias -->
-                            <textarea
-                                    id="sugerencias"
-                                    name="sugerencias"
-                                    placeholder="Escribe tus sugerencias o requerimientos aquí..."
-                                    required
-                            ></textarea>
-                        </div>
-                        <div class="frame-9">
-                            <input
-                                    type="checkbox"
-                                    id="privacidad"
-                                    name="privacidad"
-                                    required
-                            />
-                            <label for="privacidad">
-                                Autorizo el tratamiento de mis datos personales de acuerdo con la
-                                <a href="politica_privacidad.html" target="_blank">POLÍTICA DE PRIVACIDAD</a>
-                            </label>
-                        </div>
-                        <div class="frame-99">
-                            <button type="submit" class="confirmar">Confirmar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+
+                <div class="input-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Describe tu consulta o requerimiento..." required></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">
+                        Acepto la <a href="politica_privacidad.html" target="_blank">Política de Privacidad</a> y autorizo el tratamiento de mis datos.
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Enviar mensaje
+                </button>
+            </form>
         </div>
     </div>
 </div>

@@ -1,486 +1,312 @@
-.contacto,
-.contacto * {
+:root {
+    --primary-color: #ff335f;
+    --primary-dark: #e62a53;
+    --secondary-color: #2c2c2c;
+    --light-gray: #f5f5f5;
+    --medium-gray: #747474;
+    --dark-gray: #333333;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-.contacto {
 
-    height: 1100px;
-
-    overflow: hidden;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: var(--white);
+    line-height: 1.6;
 }
-.frame-103 {
-    display: flex;
-    flex-direction: column;
-    gap: 95px;
-    align-items: center;
-    justify-content: flex-start;
-    width: 1087px;
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-header h1::after {
+    content: '';
     position: absolute;
-    left: calc(50% - 532.5px);
-    top: 84px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
 }
-.frame-80 {
+
+.contact-header .subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-content {
     display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    height: 208px;
-    position: relative;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
 }
-.frame-78 {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.contactate-con-nosotros {
-    color: #ff335f;
-    text-align: center;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 36px;
-    font-weight: 400;
-    position: relative;
+
+.contact-info {
     flex: 1;
+    min-width: 300px;
+}
+
+.info-card {
+    background: rgba(44, 44, 44, 0.6);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 51, 95, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
 }
-.frame-79 {
-    padding: 10px;
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.info-card p {
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.whatsapp-link {
+    color: #25D366;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
     align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
+    gap: 8px;
+    margin-top: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s;
 }
-.en-caso-de-que-requieras-alguna-ayuda-buscanos-por-aqui {
-    color: #ffffff;
-    text-align: center;
-    font-family: "Poppins-ExtraLight", sans-serif;
-    font-size: 24px;
-    font-weight: 200;
-    position: relative;
+
+.whatsapp-link:hover {
+    color: #128C7E;
+}
+
+.contact-form-container {
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-width: 300px;
 }
-.frame-102 {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    height: 933px;
-    position: relative;
+
+.contact-form {
+    background: rgba(44, 44, 44, 0.6);
+    border-radius: 12px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.frame-100 {
+
+.form-row {
     display: flex;
-    flex-direction: column;
-    gap: 132px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-row .input-group {
     flex: 1;
+}
+
+.input-group {
+    margin-bottom: 25px;
     position: relative;
 }
-.frame-7 {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.direcci-n {
-    color: #ff335f;
-    text-align: left;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 40px;
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
     font-weight: 400;
-    position: relative;
-    align-self: stretch;
+    color: var(--white);
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--medium-gray);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.input-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.input-group input:focus ~ .input-line,
+.input-group textarea:focus ~ .input-line {
+    width: 100%;
+}
+
+.input-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 20px;
+    padding-right: 25px;
+    cursor: pointer;
+}
+
+.input-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--medium-gray);
+    border-radius: 6px;
+    padding: 12px;
+    transition: border-color 0.3s;
+}
+
+.checkbox-group {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    margin: 25px 0;
 }
-.kil-metro-7-v-a-piedecuesta-floridablanca-santander-colombia {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-ExtraLight", sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+
+.checkbox-group input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
 }
-.frame-84 {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.telefono {
-    color: #ff335f;
-    text-align: left;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-._57-607-6796220 {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-ExtraLight", sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.frame-85 {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.horarios-de-atenci-n {
-    color: #ff335f;
-    text-align: left;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.lunes-a-viernes-de-7-30-a-m-a-12-30-p-m-1-30-p-m-a-5-30-p-m {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-ExtraLight", sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.frame-101 {
-    display: flex;
-    flex-direction: column;
-    gap: 133px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    width: 548px;
-    position: relative;
-}
-.frame-83 {
-    display: flex;
-    flex-direction: column;
-    gap: 52px;
-    align-items: center;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.frame-81 {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.nombre {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 20px;
+
+.checkbox-group label {
     font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    font-size: 0.9rem;
 }
-.nombre2 {
-    color: #747474;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+
+.checkbox-group a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
 }
-.line-1 {
-    margin-top: -1px;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 1px 0 0 0;
-    align-self: stretch;
-    flex-shrink: 0;
-    height: 0px;
-    position: relative;
+
+.checkbox-group a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
 }
-.telefono2 {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.tel-fono {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.n-mero-de-tel-fono {
-    color: #747474;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.correo {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.correo-electr-nico {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.micorreo-ejemplo-com {
-    color: #747474;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.frame-98 {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.departamento {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.sugerencias {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.frame-97 {
-    background: rgba(217, 217, 217, 0.02);
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 1px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    height: 180px;
-    position: relative;
-}
-.cotizar-agendar-cita {
-    color: #747474;
-    text-align: left;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.frame-9 {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    align-items: center;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-}
-.rectangle-85 {
-    background: rgba(217, 217, 217, 0.02);
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 1px;
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    position: relative;
-}
-.autorizo-el-tratamiento-de-mis-datos-personales-de-acuerdo-con-los-t-rminos-establecidos-en-la-pol-tica-de-privacidad {
-    color: #ffffff;
-    text-align: left;
-    font-family: "-", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    position: relative;
-    width: 498px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.autorizo-el-tratamiento-de-mis-datos-personales-de-acuerdo-con-los-t-rminos-establecidos-en-la-pol-tica-de-privacidad-span {
-    color: #ffffff;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-}
-.autorizo-el-tratamiento-de-mis-datos-personales-de-acuerdo-con-los-t-rminos-establecidos-en-la-pol-tica-de-privacidad-span2 {
-    color: #ffffff;
-    font-family: "Poppins-SemiBold", sans-serif;
-    font-size: 16px;
+
+.submit-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
     font-weight: 600;
-}
-.frame-99 {
-    background: #2c2c2c;
-    border-radius: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 167px;
-    height: 45px;
-    position: relative;
-}
-.confirmar {
-    color: #ffffff;
-    text-align: center;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* Aplica a todos los inputs, textareas y selects dentro de .contacto */
-.contacto input,
-.contacto textarea,
-.contacto select {
-    background: transparent; /* Fondo transparente */
-    border: none;            /* Sin bordes */
-    outline: none;           /* Sin contorno al enfocar */
-    color: #ffffff;          /* Color de texto según diseño (ajusta si es necesario) */
-    font-family: "Poppins-Light", sans-serif; /* Fuente consistente con tu diseño */
+    transition: background 0.3s, transform 0.2s;
 }
 
-/* Opcional: Agrega un estilo en el estado focus para indicar al usuario que el campo está activo */
-.contacto input:focus,
-.contacto textarea:focus,
-.contacto select:focus {
-    /* Puedes optar por añadir una línea inferior o un cambio de color sutil, por ejemplo: */
-    border-bottom: 1px solid #ff335f;
+.submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact-header .subtitle {
+        font-size: 1rem;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
 }
 
-/* Si usas placeholders, asegúrate que su estilo combine */
-.contacto ::placeholder {
-    color: #747474;
-    opacity: 1;
+@media (max-width: 480px) {
+    .contact-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
 }
