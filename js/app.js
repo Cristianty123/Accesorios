@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elevavidrios: "MOD_ELEVA",
         audio: "AUDIO"
     };
-
+    const host = "localhost";
     // Función para cargar contenido dinámico
     function cargarPagina(url, agregarHistorial = true) {
         fetch(url)
@@ -54,14 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     // Función para agregar eventos y accesorios en venta_accesorios.html se uso json de prueba
-    function agregarEventosMostrarAccesorios(tipo) {
-        const itemTypeId = tipoToItemTypeId[tipo]; // será undefined si tipo es null o no está en el mapa
+    function agregarEventosMostrarAccesorios(tipo, pagina = 1) {
+        const itemTypeId = tipoToItemTypeId[tipo];
         const panelAccesorios = document.querySelector(".panel-accesorios");
         const titulo = document.querySelector(".titulo-categoria");
+        const paginacion = document.getElementById("paginacion");
 
-        if (!panelAccesorios) return;
+        if (!panelAccesorios || !paginacion) return;
 
-        // Cambiar el título dinámicamente solo si hay tipo
         if (titulo) {
             if (tipo && tipoToItemTypeId[tipo]) {
                 const textoTitulo = tipo.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase());
@@ -71,20 +71,33 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        panelAccesorios.innerHTML = ""; // Limpiar
+        panelAccesorios.innerHTML = "";
+        paginacion.innerHTML = "";
 
-        // Construir URL de backend según si hay itemTypeId
-        const baseUrl = "http://192.168.28.131:8080/items/page?page=1";
+        const baseUrl = `http://${host}:8080/items/page?page=${pagina}`;
         const url = itemTypeId ? `${baseUrl}&itemTypeId=${itemTypeId}` : baseUrl;
 
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorData => {
+                        throw errorData; // Lanza el JSON con el mensaje de error
+                    });
+                }
+                return response.json();
+            })
             .then(data => {
                 const accesorios = data.items || [];
+                const totalPaginas = data.totalPages || 1;
+
+                if (accesorios.length === 0) {
+                    panelAccesorios.innerHTML = "<p>No se encontraron accesorios para esta página.</p>";
+                    return; // no mostrar paginación
+                }
                 accesorios.forEach(accesorio => {
                     const accesorioHTML = `
                     <div class="accesorio">
-                        <img class="image-48" src="http://192.168.28.131:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
+                        <img class="image-48" src="http://${host}:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
                         <div class="descripcion">${accesorio.name}</div>
                         <div class="nuevo">Nuevo</div>
                         <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
@@ -95,10 +108,53 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
                     panelAccesorios.innerHTML += accesorioHTML;
                 });
+
+                // Botón "Anterior"
+                if (pagina > 1) {
+                    const btnAnterior = document.createElement("button");
+                    btnAnterior.textContent = "<< Anterior";
+                    // no le ponemos "activo"
+                    btnAnterior.addEventListener("click", () => {
+                        agregarEventosMostrarAccesorios(tipo, pagina - 1);
+                    });
+                    paginacion.appendChild(btnAnterior);
+                }
+
+                // Botones numerados
+                for (let i = 1; i <= totalPaginas; i++) {
+                    const boton = document.createElement("button");
+                    boton.textContent = i;
+                    if (i === pagina) {
+                        boton.classList.add("activo"); // solo el actual
+                    }
+                    boton.addEventListener("click", () => {
+                        agregarEventosMostrarAccesorios(tipo, i);
+                    });
+                    paginacion.appendChild(boton);
+                }
+
+                // Botón "Siguiente"
+                if (pagina < totalPaginas) {
+                    const btnSiguiente = document.createElement("button");
+                    btnSiguiente.textContent = "Siguiente >>";
+                    // no le ponemos "activo"
+                    btnSiguiente.addEventListener("click", () => {
+                        agregarEventosMostrarAccesorios(tipo, pagina + 1);
+                    });
+                    paginacion.appendChild(btnSiguiente);
+                }
+
             })
             .catch(error => {
                 console.error("Error al cargar los accesorios:", error);
-                panelAccesorios.innerHTML = "<p>Error al cargar los accesorios.</p>";
+                // Validamos si es error 404 específicamente
+                if (error.status === 404 && error.message === "La página seleccionada no tiene items.") {
+                    panelAccesorios.innerHTML = "<p>No hay accesorios disponibles en esta página.</p>";
+                    paginacion.innerHTML = ""; // aseguramos limpiar la paginación
+                } else {
+                    panelAccesorios.innerHTML = "<p>Error al cargar los accesorios.</p>";
+                    paginacion.innerHTML = "";
+                }
             });
     }
     // Manejar el botón de atrás/adelante del navegador
