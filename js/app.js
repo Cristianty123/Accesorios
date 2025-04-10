@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
         elevavidrios: "MOD_ELEVA",
         audio: "AUDIO"
     };
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        document.querySelector('.main-nav').classList.toggle('active');
+        this.classList.toggle('open');
+    });
     function mostrarInformacionItem() {
         const itemData = localStorage.getItem("accesorioSeleccionado");
         if (!itemData) return;

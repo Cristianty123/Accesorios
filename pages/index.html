@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Añadir meta viewport importante -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="../css/style.css">
-
   <title>Web_Accesorios</title>
 </head>
 <body>
@@ -12,70 +12,74 @@
 <!-- Contenedor principal -->
 <div class="main-frame">
 
-  <!-- Inicio: Encabezado -->
+  <!-- Header optimizado -->
   <header id="header">
-    <!-- Logo positioned on the left corner -->
-    <img src="../img/logo-accesorios-light-10.png" alt="Logo de Mi Página Web" id="logo">
+    <div class="header-container">
+      <img src="../img/logo-accesorios-light-10.png" alt="Logo" id="logo">
 
-    <!-- Navigation menu with links to different sections of the website -->
-    <nav>
-      <ul>
-        <li><a href="#" data-page="inicio.html" class="nav-link">Inicio</a></li>
-        <li><a href="#" data-page="venta_accesorios.html?page=1" class="nav-link">Accesorios</a></li>
-        <li><a href="#" data-page="nosotros.html" class="nav-link">Nosotros</a></li>
-        <li><a href="#" data-page="contacto.html" class="nav-link">Contacto</a></li>
-      </ul>
-    </nav>
+      <button class="mobile-menu-toggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <!-- Theme Toggle Switch -->
-    <div class="theme-toggle">
-      <label class="switch" aria-label="Cambiar tema (Claro/Oscuro)">
-        <input type="checkbox" id="theme-switch">
-        <span class="slider"></span>
-      </label>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" data-page="inicio.html" class="nav-link">Inicio</a></li>
+          <li><a href="#" data-page="venta_accesorios.html?page=1" class="nav-link">Accesorios</a></li>
+          <li><a href="#" data-page="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="#" data-page="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="theme-toggle">
+        <label class="switch" aria-label="Cambiar tema">
+          <input type="checkbox" id="theme-switch">
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
   </header>
-  <!-- Fin: Encabezado -->
 
-  <!-- Inicio: Contenido principal -->
-  <main class="body" id = "contenido">
-    <!-- Contenido dinamico -->
+  <!-- Main content -->
+  <main class="body" id="contenido">
+    <!-- Contenido dinámico -->
   </main>
-  <!-- Fin: Contenido principal -->
 
-  <!-- Inicio: Pie de página -->
+  <!-- Footer optimizado -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-column">
-        <h3>TOTES BGA</h3>
-        <p>DCalle 27 # Carrera 19 – 50 </p>
-        <p>Bucaramanga, Santander</p>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>TOTES BGA</h3>
+          <p>Calle 27 # Carrera 19 – 50</p>
+          <p>Bucaramanga, Santander</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>CONSORCIO</h3>
+          <p><a href="#" target="_blank">Política de Tratamiento de Datos</a></p>
+        </div>
+
+        <div class="footer-column">
+          <h3>SÍGUENOS</h3>
+          <div class="social-icons">
+            <a href="#" target="_blank"><img src="../img/facebook_logo.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="../img/youtube_logo.png" alt="YouTube"></a>
+            <a href="#" target="_blank"><img src="../img/linkedin_logo.png" alt="LinkedIn"></a>
+          </div>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h3>CONSORCIO</h3>
-        <p><a href="assets/documents/POLITICA_DE_TRATAMIENTO_DE_DATOS_PERSONALES_DEL_CONSORCIO_TOTES_BGA_PARA_TERCEROS.pdf" target="_blank">Política de Tratamiento de Datos Personales</a></p>
+      <div class="footer-divider"></div>
+
+      <div class="footer-copyright">
+        © 2025 TOTES BGA. Todos los derechos reservados.
       </div>
-
-      <div class="footer-column">
-        <h3>SÍGUENOS</h3>
-        <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="../img/facebook_logo.png" alt="Facebook"></a>
-        <a href="https://www.youtube.com/?app=desktop&hl=es" target="_blank"><img src="../img/youtube_logo.png" alt="Instagram"></a>
-        <a href="https://co.linkedin.com/" target="_blank"><img src="../img/linkedin_logo.png" alt="Twitter"></a>
-      </div>
-    </div>
-
-    <!-- Horizontal line inside the footer -->
-    <div class="footer-divider"></div>
-
-    <!-- Copyright Message -->
-    <div class="footer-copyright">
-      © 2025 TOTES BGA. Todos los derechos reservados.
     </div>
   </footer>
-  <!-- Fin: Pie de página -->
+</div>
 
-</div> <!-- Fin: Contenedor principal -->
 <script src="../js/app.js"></script>
 </body>
 </html>
