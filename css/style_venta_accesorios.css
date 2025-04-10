@@ -104,17 +104,6 @@
     align-items: center; /* 🔹 Centra el texto verticalmente si hay espacio */
     justify-content: center;
 }
-.nuevo {
-    color: #ff335f;
-    text-align: center;
-    font-family: "Poppins-SemiBold", sans-serif;
-    font-size: 18.39999771118164px;
-    font-weight: 600;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .precio {
     color: #ffffff;
     text-align: center;
@@ -126,6 +115,7 @@
     align-items: center;
     justify-content: center;
 }
+/* Estilo base */
 .frame-114 {
     background: #c0c0c0;
     border-radius: 45.23px;
@@ -138,18 +128,32 @@
     flex-shrink: 0;
     width: 196px;
     position: relative;
+    transition: background 0.3s ease; /* transición suave */
 }
+
 .informacion {
     color: #000000;
     text-align: center;
     font-family: "Poppins-Medium", sans-serif;
-    font-size: 22.999998092651367px;
+    font-size: 23px;
     font-weight: 500;
     position: relative;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer; /* <- Esto es lo que pone el mouse como manito */
+    transition: color 0.3s ease; /* transición suave */
+}
+
+/* Efecto hover sobre el contenedor */
+.frame-114:hover {
+    background: #ff335f;
+}
+
+/* Cambiar el color del texto al pasar el mouse */
+.frame-114:hover .informacion {
+    color: #ffffff;
 }
 .paginacion {
     display: flex;

@@ -10,6 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
         elevavidrios: "MOD_ELEVA",
         audio: "AUDIO"
     };
+    function mostrarInformacionItem() {
+        const itemData = localStorage.getItem("accesorioSeleccionado");
+        if (!itemData) return;
+
+        const item = JSON.parse(itemData);
+        document.getElementById("nombre").textContent = item.name;
+        document.getElementById("imagen").src = `http://${host}:8080/uploads/${item.imageurl}`;
+        document.getElementById("descripcion").textContent = item.description;
+        document.getElementById("precio").textContent = `💰 Precio: $${Number(item.sellingprice).toLocaleString("es-CO")}`;
+
+        if (item.free_shipping) {
+            document.getElementById("envio").textContent = "🚚 Envío gratis";
+        } else {
+            document.getElementById("envio").textContent = `📦 Costo de envío: $${Number(item.price_shipping).toLocaleString("es-CO")} COP`;
+        }
+    }
     const host = "localhost";
     // Función para cargar contenido dinámico
     function cargarPagina(url, agregarHistorial = true) {
@@ -27,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const params = new URLSearchParams(url.split("?")[1]);
                     const tipo = params.get("tipo"); // será null si no hay tipo
                     agregarEventosMostrarAccesorios(tipo); // tipo puede ser null o string
+                }
+                if (url === "informacion_item.html") {
+                    mostrarInformacionItem();
                 }
             })
             .catch(error => console.error("Error al cargar la página:", error));
@@ -53,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-    // Función para agregar eventos y accesorios en venta_accesorios.html se uso json de prueba
+    // Función para agregar eventos y accesorios en venta_accesorios.html
     function agregarEventosMostrarAccesorios(tipo, pagina = 1) {
         const itemTypeId = tipoToItemTypeId[tipo];
         const panelAccesorios = document.querySelector(".panel-accesorios");
@@ -70,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 titulo.textContent = "Todos los accesorios disponibles";
             }
         }
-
         panelAccesorios.innerHTML = "";
         paginacion.innerHTML = "";
 
@@ -99,16 +117,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="accesorio">
                         <img class="image-48" src="http://${host}:8080/uploads/${accesorio.imageurl || 'default.png'}" alt="${accesorio.name}" />
                         <div class="descripcion">${accesorio.name}</div>
-                        <div class="nuevo">Nuevo</div>
                         <div class="precio">Cop $${Number(accesorio.sellingprice).toLocaleString("es-CO")}</div>
                         <div class="frame-114">
-                            <div class="informacion">INFORMACION</div>
+                            <div class="informacion" data-id="${accesorio.id}">INFORMACION</div>
                         </div>
                     </div>
                 `;
                     panelAccesorios.innerHTML += accesorioHTML;
                 });
-
+                const botonesInformacion = document.querySelectorAll(".informacion");
+                botonesInformacion.forEach(boton => {
+                    boton.addEventListener("click", () => {
+                        const id = boton.getAttribute("data-id");
+                        const accesorio = accesorios.find(item => item.id === id);
+                        if (accesorio) {
+                            localStorage.setItem("accesorioSeleccionado", JSON.stringify(accesorio));
+                            cargarPagina("informacion_item.html");
+                        }
+                    });
+                });
                 // Botón "Anterior"
                 if (pagina > 1) {
                     const btnAnterior = document.createElement("button");

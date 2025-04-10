@@ -1,0 +1,70 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    max-width: 800px;
+    padding: 30px;
+    gap: 30px;
+}
+
+.image-container img {
+    width: 260px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.info-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.categoria, .descripcion, .stock, .precio, .envio {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.precio {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.envio {
+    font-size: 16px;
+    color: #555;
+}
+
+.btn-comprar {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #333;
+}
