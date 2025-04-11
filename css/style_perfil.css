@@ -85,12 +85,6 @@ body {
     font-weight: 600;
 }
 
-.profile-email {
-    color: var(--medium-gray);
-    margin: 0;
-    font-size: 1.1rem;
-}
-
 .profile-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -127,9 +121,11 @@ body {
 
 .info-item {
     display: flex;
+    align-items: center;
     margin-bottom: 1.2rem;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid var(--dark-gray);
+    position: relative;
 }
 
 .info-item:last-child {
@@ -142,10 +138,27 @@ body {
     font-weight: 600;
     width: 160px;
     color: var(--medium-gray);
+    flex-shrink: 0;
 }
 
 .info-value {
     flex: 1;
+    margin-right: 1rem;
+}
+
+.info-edit-btn {
+    background: none;
+    border: none;
+    color: var(--medium-gray);
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin-left: auto;
+}
+
+.info-edit-btn:hover {
+    color: var(--primary-color);
 }
 
 .activity-item {
@@ -373,10 +386,21 @@ body {
 
     .info-item {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .info-label {
         width: 100%;
         margin-bottom: 0.3rem;
+    }
+
+    .info-value {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    .info-edit-btn {
+        align-self: flex-end;
+        margin-top: -1.5rem;
     }
 }
