@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contenido = document.getElementById("contenido");
     const links = document.querySelectorAll(".nav-link");
     const botonesCategoria = document.querySelectorAll(".boton-categoria");
+    const host = "192.168.1.10";
     const tipoToItemTypeId = {
         parqueo: "PARQ",
         externos: "EXT",
@@ -10,9 +11,30 @@ document.addEventListener("DOMContentLoaded", function () {
         elevavidrios: "MOD_ELEVA",
         audio: "AUDIO"
     };
-    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-        document.querySelector('.main-nav').classList.toggle('active');
+    const header = document.getElementById('header');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    // ✅ Scroll + menú hamburguesa
+    document.addEventListener('scroll', () => {
+        if (window.scrollY > 50 || menuToggle.classList.contains('open')) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // ✅ Menú hamburguesa
+    menuToggle.addEventListener('click', function () {
         this.classList.toggle('open');
+        mainNav.classList.toggle('active');
+
+        // Forzar scroll visual
+        if (this.classList.contains('open')) {
+            header.classList.add('scrolled');
+        } else if (window.scrollY <= 50) {
+            header.classList.remove('scrolled');
+        }
     });
     function mostrarInformacionItem() {
         const itemData = localStorage.getItem("accesorioSeleccionado");
@@ -35,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("envio").textContent = `📦 Costo de envío: $${Number(item.price_shipping).toLocaleString("es-CO")} COP`;
         }
     }
-    const host = "localhost";
     function igualarAlturaAccesorios() {
         const tarjetas = document.querySelectorAll(".accesorio");
 
@@ -275,14 +296,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cargar la página inicial si hay una URL en el hash
     const initialPage = location.hash ? location.hash.substring(1) : "inicio.html";
     cargarPagina(initialPage, false);
-});
-document.addEventListener('scroll', () => {
-    const header = document.getElementById('header'); // Selects the header element by its ID
-
-    // Adds or removes the 'scrolled' class based on the scroll position
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled'); // Adds the 'scrolled' class if the scroll position is greater than 50 pixels
-    } else {
-        header.classList.remove('scrolled'); // Removes the 'scrolled' class if the scroll position is 50 pixels or less
-    }
 });

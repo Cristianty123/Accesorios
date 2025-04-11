@@ -1,83 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Añadir meta viewport importante -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="../css/style.css">
-  <title>Web_Accesorios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Web_Accesorios</title>
 </head>
 <body>
 
 <!-- Contenedor principal -->
 <div class="main-frame">
 
-  <!-- Header optimizado -->
-  <header id="header">
-    <div class="header-container">
-      <img src="../img/logo-accesorios-light-10.png" alt="Logo" id="logo">
+    <!-- Header optimizado -->
+    <header id="header">
+        <div class="header-container">
+            <img src="../img/logo-accesorios-light-10.png" alt="Logo" id="logo">
 
-      <button class="mobile-menu-toggle" aria-label="Menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+            <button class="mobile-menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#" data-page="inicio.html" class="nav-link">Inicio</a></li>
-          <li><a href="#" data-page="venta_accesorios.html?page=1" class="nav-link">Accesorios</a></li>
-          <li><a href="#" data-page="nosotros.html" class="nav-link">Nosotros</a></li>
-          <li><a href="#" data-page="contacto.html" class="nav-link">Contacto</a></li>
-        </ul>
-      </nav>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" data-page="inicio.html" class="nav-link">Inicio</a></li>
+                    <li><a href="#" data-page="venta_accesorios.html?page=1" class="nav-link">Accesorios</a></li>
+                    <li><a href="#" data-page="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="#" data-page="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
 
-      <div class="theme-toggle">
-        <label class="switch" aria-label="Cambiar tema">
-          <input type="checkbox" id="theme-switch">
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div>
-  </header>
+            <div class="header-icons">
+                <div class="theme-toggle">
+                    <label class="switch" aria-label="Cambiar tema">
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <a href="#" class="cart-icon" aria-label="Carrito de compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
 
-  <!-- Main content -->
-  <main class="body" id="contenido">
-    <!-- Contenido dinámico -->
-  </main>
-
-  <!-- Footer optimizado -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>TOTES BGA</h3>
-          <p>Calle 27 # Carrera 19 – 50</p>
-          <p>Bucaramanga, Santander</p>
+                <a href="#" class="user-icon" aria-label="Usuario">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
         </div>
+    </header>
 
-        <div class="footer-column">
-          <h3>CONSORCIO</h3>
-          <p><a href="#" target="_blank">Política de Tratamiento de Datos</a></p>
+    <!-- Main content -->
+    <main class="body" id="contenido">
+        <!-- Contenido dinámico -->
+    </main>
+
+    <!-- Footer optimizado -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TOTES BGA</h3>
+                    <p>Calle 27 # Carrera 19 – 50</p>
+                    <p>Bucaramanga, Santander</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>CONSORCIO</h3>
+                    <p><a href="#" target="_blank">Política de Tratamiento de Datos</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>SÍGUENOS</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><img src="../img/facebook_logo.png" alt="Facebook"></a>
+                        <a href="#" target="_blank"><img src="../img/youtube_logo.png" alt="YouTube"></a>
+                        <a href="#" target="_blank"><img src="../img/linkedin_logo.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-copyright">
+                © 2025 TOTES BGA. Todos los derechos reservados.
+            </div>
         </div>
-
-        <div class="footer-column">
-          <h3>SÍGUENOS</h3>
-          <div class="social-icons">
-            <a href="#" target="_blank"><img src="../img/facebook_logo.png" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="../img/youtube_logo.png" alt="YouTube"></a>
-            <a href="#" target="_blank"><img src="../img/linkedin_logo.png" alt="LinkedIn"></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-divider"></div>
-
-      <div class="footer-copyright">
-        © 2025 TOTES BGA. Todos los derechos reservados.
-      </div>
-    </div>
-  </footer>
+    </footer>
 </div>
 
 <script src="../js/app.js"></script>
