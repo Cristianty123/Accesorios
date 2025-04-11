@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style_perfil.css" />
+    <title>Mi Perfil - TOTES BGA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-avatar-container">
+            <img src="../img/default-avatar.png" alt="Avatar" class="profile-avatar">
+            <div class="avatar-overlay">
+                <i class="fas fa-camera"></i>
+                <span>Cambiar foto</span>
+            </div>
+        </div>
+        <h1 class="profile-name">Example user</h1>
+        <p class="profile-email">example.user@example.com</p>
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-sidebar">
+            <div class="profile-card">
+                <h2 class="card-title"><i class="fas fa-user-circle"></i> Información Personal</h2>
+                <div class="info-item">
+                    <span class="info-label">Identificación:</span>
+                    <span class="info-value">1023456789 (Cédula)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Teléfono:</span>
+                    <span class="info-value">+57 310 123 4567</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Dirección:</span>
+                    <span class="info-value">Calle 123 #45-67, Bucaramanga</span>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <h2 class="card-title"><i class="fas fa-credit-card"></i> Métodos de Pago</h2>
+                <div class="payment-method">
+                    <i class="fab fa-cc-visa payment-icon"></i>
+                    <div class="payment-details">
+                        <p>VISA •••• 4242</p>
+                        <small>Expira 05/25</small>
+                    </div>
+                    <button class="payment-action"><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <button class="add-payment-btn">
+                    <i class="fas fa-plus-circle"></i> Agregar Método
+                </button>
+            </div>
+        </div>
+
+        <div class="profile-main">
+            <div class="profile-card">
+                <h2 class="card-title"><i class="fas fa-history"></i> Actividad Reciente</h2>
+                <div class="activity-item">
+                    <i class="fas fa-receipt activity-icon"></i>
+                    <div class="activity-details">
+                        <p>Compra completada #ORD-2025-015</p>
+                        <small>Hoy - Total: $450,000 COP</small>
+                        <div class="order-items">
+                            <span>• Kit Luces LED T10 ($120,000)</span>
+                            <span>• Elevavidrios Eléctricos ($330,000)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-receipt activity-icon"></i>
+                    <div class="activity-details">
+                        <p>Compra completada #ORD-2025-506</p>
+                        <small>Hoy - Total: $120,000 COP</small>
+                        <div class="order-items">
+                            <span>• Barras de techo audio ($120,000)</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="view-all-btn">
+                    <i class="fas fa-eye"></i> Ver todas las actividades
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-actions">
+        <button class="profile-btn edit-btn">
+            <i class="fas fa-edit"></i> Editar Perfil
+        </button>
+        <button class="profile-btn logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+        </button>
+    </div>
+</div>
+</body>
+</html>
