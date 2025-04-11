@@ -218,17 +218,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Botones numerados (exactamente los que vienen en pagesToShow)
                 pagesToShow.forEach(pageNum => {
-                    const page = parseInt(pageNum);
-                    const boton = document.createElement("button");
-                    boton.textContent = page;
-                    if (page === currentPage) {
-                        boton.classList.add("activo");
+                    if (pageNum === "...") {
+                        const separador = document.createElement("span");
+                        separador.textContent = "...";
+                        separador.classList.add("paginacion-separador"); // opcional, por estilo
+                        fragmentPaginacion.appendChild(separador);
+                    } else {
+                        const page = parseInt(pageNum);
+                        const boton = document.createElement("button");
+                        boton.textContent = page;
+                        if (page === currentPage) {
+                            boton.classList.add("activo");
+                        }
+                        boton.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            agregarEventosMostrarAccesorios(tipo, page);
+                        });
+                        fragmentPaginacion.appendChild(boton);
                     }
-                    boton.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        agregarEventosMostrarAccesorios(tipo, page);
-                    });
-                    fragmentPaginacion.appendChild(boton);
                 });
 
                 // Botón "Siguiente" (solo uno)

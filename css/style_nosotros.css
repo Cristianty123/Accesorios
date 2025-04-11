@@ -1,214 +1,278 @@
-.nosotros {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative; /* Cambia de absolute a relative */
-    padding-top: 0px; /* Ajusta el espacio para el encabezado */
-    right: 0px;
-    left: 0px;
-    bottom: 0px;
-    top: 0px;
+/* Variables de color */
+:root {
+    --primary-color: #ff335f;
+    --primary-dark: #e62a53;
+    --secondary-color: #2c2c2c;
+    --light-gray: #f5f5f5;
+    --medium-gray: #747474;
+    --dark-gray: #333333;
+    --white: #ffffff;
+    --black: #000000;
+    --bg-dark: #121212;
+    --bg-light-dark: #1e1e1e;
 }
-.sobre-nosotros-panel-principal {
-    padding: 0px 70px 0px 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.frame-sobre-nosotros {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    line-height: 1.6;
 }
-.sobre-nosostros {
-    color: #ff335f;
-    text-align: left;
-    font-family: "Roboto-Bold", sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+
+.nosotros-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.frame-texto-sobre-nosotros {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
+
+/* Estilos para secciones */
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
-.bienvenidos-a-tote-accesorios-tu-tienda-en-l-nea-especializada-en-accesorios-para-veh-culos-ofrecemos-productos-de-alta-calidad-para-mejorar-la-est-tica-funcionalidad-y-seguridad-de-tu-coche-moto-o-camioneta {
-    color: #ffffff;
-    text-align: left;
-    font-family: "Roboto-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    position: relative;
-    flex: 1;
+
+.two-columns {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.frame-mision-vision-imagen {
-    padding: 0px 70px 0px 70px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    align-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
+    gap: 40px;
+    align-items: center;
 }
-.frame-imagen-vision-mision {
+
+.two-columns > * {
+    flex: 1;
+    min-width: 300px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    height: 400px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    height: 287px;
-    min-width: 337px;
-    max-width: 500px;
-    position: relative;
+    text-align: center;
+    color: var(--white);
 }
-.imagen-vision-y-vision {
-    border-radius: 50px;
-    align-self: stretch;
-    flex: 1;
-    position: relative;
-    object-fit: cover;
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
 }
-.frame-mision {
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Intro Section */
+.intro-section {
+    background-color: var(--bg-light-dark);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Mission & Vision Section */
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
     align-items: center;
-    justify-content: center;
-    flex: 1;
-    min-width: 354px;
-    position: relative;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz {
-    text-align: left;
-    position: relative;
-    align-self: stretch;
-    min-width: 149px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span {
-    color: #ff335f;
-    font-family: "Poppins-Bold", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span2 {
-    color: #ff335f;
-    font-family: "Poppins-Bold", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span3 {
-    color: #ffffff;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span4 {
-    color: #ffffff;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span5 {
-    color: #ff335f;
-    font-family: "Poppins-Bold", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span6 {
-    color: #ff335f;
-    font-family: "Poppins-Bold", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-}
-.nuestra-misi-n-proporcionar-una-plataforma-que-ofrezca-a-los-clientes-una-experiencia-de-compra-eficiente-y-satisfactoria-para-accesorios-de-carros-mientras-se-optimizan-los-procesos-internos-de-importaci-n-venta-e-instalaci-n-a-trav-s-de-la-integraci-n-con-el-sistema-crm-erp-del-consorcio-auto-upb-nuestra-visi-n-convertirse-en-una-tienda-digital-l-der-en-la-venta-de-accesorios-para-autom-viles-en-la-regi-n-reconocida-por-su-innovaci-n-eficiencia-en-las-operaciones-y-excelencia-en-el-servicio-al-cliente-estableciendo-un-est-ndar-de-referencia-en-la-industria-automotriz-span7 {
-    color: #ffffff;
-    font-family: "Poppins-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-}
-.separador {
-    padding: 0px 60px 0px 60px;
-    display: flex;
-    flex-direction: column;
     gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
 }
-.rectangulo-separador {
-    background: #d9d9d9;
-    align-self: stretch;
-    flex-shrink: 0;
+
+.mission-block, .vision-block {
+    margin-bottom: 40px;
+}
+
+.mission-block p, .vision-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Image Styles */
+.image-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .responsive-image {
+    transform: scale(1.03);
+}
+
+/* Divider */
+.divider {
     height: 1px;
-    position: relative;
-    transform-origin: 0 0;
-    transform: rotate(0deg) scale(1, -1);
+    background-color: var(--medium-gray);
+    margin: 20px auto;
+    max-width: 1200px;
 }
-.por-qu-elegirnos-variedad-accesorios-para-todos-los-tipos-de-veh-culos-calidad-garantizada-productos-seleccionados-para-satisfacer-tus-necesidades-env-o-r-pido-entregas-seguras-y-a-tiempo-atenci-n-personalizada-nuestro-equipo-siempre-listo-para-ayudarte-compromiso-con-el-cliente-nos-esforzamos-por-ofrecerte-una-experiencia-de-compra-f-cil-y-satisfactoria-si-tienes-dudas-o-necesitas-asesoramiento-estamos-para-ayudarte-gracias-por-elegir-totes-bga-accesorios-haz-de-tu-veh-culo-lo-mejor-con-nosotros {
-    text-align: left;
-    position: relative;
-    align-self: stretch;
+
+/* Why Choose Section */
+.why-choose-section {
+    background-color: var(--bg-light-dark);
+}
+
+.features-list {
+    list-style: none;
+    margin: 30px 0;
+    padding-left: 0;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
 }
-.por-qu-elegirnos-variedad-accesorios-para-todos-los-tipos-de-veh-culos-calidad-garantizada-productos-seleccionados-para-satisfacer-tus-necesidades-env-o-r-pido-entregas-seguras-y-a-tiempo-atenci-n-personalizada-nuestro-equipo-siempre-listo-para-ayudarte-compromiso-con-el-cliente-nos-esforzamos-por-ofrecerte-una-experiencia-de-compra-f-cil-y-satisfactoria-si-tienes-dudas-o-necesitas-asesoramiento-estamos-para-ayudarte-gracias-por-elegir-totes-bga-accesorios-haz-de-tu-veh-culo-lo-mejor-con-nosotros-span {
-    color: #ff335f;
-    font-family: "Poppins-Bold", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
+
+.features-list i {
+    color: var(--primary-color);
+    margin-top: 3px;
 }
-.por-qu-elegirnos-variedad-accesorios-para-todos-los-tipos-de-veh-culos-calidad-garantizada-productos-seleccionados-para-satisfacer-tus-necesidades-env-o-r-pido-entregas-seguras-y-a-tiempo-atenci-n-personalizada-nuestro-equipo-siempre-listo-para-ayudarte-compromiso-con-el-cliente-nos-esforzamos-por-ofrecerte-una-experiencia-de-compra-f-cil-y-satisfactoria-si-tienes-dudas-o-necesitas-asesoramiento-estamos-para-ayudarte-gracias-por-elegir-totes-bga-accesorios-haz-de-tu-veh-culo-lo-mejor-con-nosotros-span2 {
-    color: #ffffff;
-    font-family: "Roboto-Light", sans-serif;
-    font-size: 12px;
+
+.feature-title {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.commitment-block {
+    background-color: rgba(255, 51, 95, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.commitment-title {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.closing-message {
+    font-style: italic;
+    margin-top: 20px;
     font-weight: 300;
+    color: var(--medium-gray);
 }
-.por-qu-elegirnos-variedad-accesorios-para-todos-los-tipos-de-veh-culos-calidad-garantizada-productos-seleccionados-para-satisfacer-tus-necesidades-env-o-r-pido-entregas-seguras-y-a-tiempo-atenci-n-personalizada-nuestro-equipo-siempre-listo-para-ayudarte-compromiso-con-el-cliente-nos-esforzamos-por-ofrecerte-una-experiencia-de-compra-f-cil-y-satisfactoria-si-tienes-dudas-o-necesitas-asesoramiento-estamos-para-ayudarte-gracias-por-elegir-totes-bga-accesorios-haz-de-tu-veh-culo-lo-mejor-con-nosotros-span3 {
-    color: #ffffff;
-    font-family: "Roboto-Light", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
+.features-list {
+    list-style: none;
+    margin: 30px 0;
+    padding-left: 0;
 }
-.imagen-porque-elegirnos {
-    border-radius: 50px;
-    align-self: stretch;
-    flex: 1;
+
+.features-list li {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: flex-start;
     position: relative;
-    object-fit: cover;
+    padding-left: 30px;
+}
+
+.features-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
+}
+
+.feature-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 150px; /* Ancho fijo para los títulos */
+    margin-right: 10px;
+}
+
+.feature-desc {
+    flex: 1;
+    min-width: 200px; /* Ancho mínimo para la descripción */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .features-list li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 250px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-content {
+        padding: 30px 15px;
+    }
+
+    .two-columns > * {
+        min-width: 100%;
+    }
 }

@@ -198,6 +198,7 @@ body {
     width: 100%;
 }
 
+/* ESTILOS MEJORADOS PARA EL SELECT */
 .input-group select {
     appearance: none;
     -webkit-appearance: none;
@@ -208,6 +209,39 @@ body {
     background-size: 20px;
     padding-right: 25px;
     cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    padding: 12px 0;
+}
+
+/* Estilo para las opciones del select */
+.input-group select option {
+    background-color: #2c2c2c;
+    color: var(--white);
+    padding: 10px 15px;
+}
+
+/* Estilo cuando el select está enfocado */
+.input-group select:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Estilo hover para opciones (soporte limitado) */
+.input-group select option:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Opción seleccionada */
+.input-group select option:checked {
+    background-color: var(--primary-dark);
+    color: white !important;
+}
+
+/* Estilo para grupos de opciones */
+.input-group select optgroup {
+    background-color: #1a1a1a;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .input-group textarea {
@@ -271,6 +305,14 @@ body {
     background: var(--primary-dark);
     transform: translateY(-2px);
 }
+
+.contact-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .form-row {
