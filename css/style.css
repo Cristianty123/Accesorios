@@ -498,3 +498,103 @@ main {
     padding-top: 15vh;
     width: 100%;
 }
+
+/* Transiciones para el contenido */
+.content-transition {
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Animación de entrada */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación de salida */
+.fade-out {
+    animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Para el loader entre transiciones */
+.loader-transition {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 51, 95, 0.3);
+    border-radius: 50%;
+    border-top-color: rgb(255, 51, 95);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+/* Animaciones para filtros y paginación */
+.btn-filtro, .paginacion button {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-filtro:hover, .paginacion button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-filtro.activo {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.panel-accesorios {
+    transition: opacity 0.3s ease;
+}
+/* Animación para filtros activos */
+.btn-filtro.animate-active {
+    animation: pulseActive 0.5s ease;
+}
+
+@keyframes pulseActive {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para botones activos */
+.btn-filtro.activo {
+    background-color: rgb(255, 51, 95);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 51, 95, 0.3);
+}
+
+.paginacion button.activo {
+    background-color: rgb(255, 51, 95);
+    color: white;
+    font-weight: bold;
+}
+
+/* Transición suave para el panel de resultados */
+.panel-accesorios {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
