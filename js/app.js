@@ -426,8 +426,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const shippingElement = document.getElementById("envio");
             if (shippingElement) {
                 shippingElement.textContent = item.free_shipping
-                    ? "🚚 Envío gratis"
-                    : `📦 Costo de envío: $${Number(item.price_shipping).toLocaleString("es-CO")} COP`;
+                    ? "Envío gratis"
+                    : `Costo de envío: $${Number(item.price_shipping).toLocaleString("es-CO")} COP`;
             }
 
             const imageElement = document.getElementById("imagen");
