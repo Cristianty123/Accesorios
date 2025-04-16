@@ -11,8 +11,11 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-
 /* Reset y estilos generales */
+:root {
+    --notification-color: #00c853; /* Color por defecto */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,12 +34,15 @@ body {
     overflow-x: hidden;
 }
 
-/* HEADER STYLES */
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+
 header {
     background-color: transparent;
     color: white;
-    padding: 3vh 5vw; /* Aumenté de 2vh a 3vh */
-    min-height: 80px; /* Altura mínima añadida */
+    padding: 3vh 5vw;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,7 +108,70 @@ nav ul li a:hover::after {
     transform: scaleX(1);
 }
 
-/* Theme toggle */
+/* ==========================================================================
+   Cart Notification Styles
+   ========================================================================== */
+
+.cart-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c2c2c;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateX(120%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    border-left: 4px solid var(--notification-color);
+}
+
+.cart-notification.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-icon i {
+    font-size: 1.5rem;
+    color: var(--notification-color);
+}
+
+.notification-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: var(--notification-color);
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.notification-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--notification-color);
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: progress 3s linear;
+}
+
+@keyframes progress {
+    to { transform: scaleX(1); }
+}
+
+/* ==========================================================================
+   Theme Toggle Styles
+   ========================================================================== */
+
 .theme-toggle {
     margin-left: auto;
 }
@@ -158,20 +227,19 @@ input:checked + .slider::before {
     content: "☀️";
     color: rgb(173, 216, 230);
 }
-/* Scrolled header */
+
+/* ==========================================================================
+   Scrolled Header Styles
+   ========================================================================== */
+
 header.scrolled {
     box-shadow: 0 8px 20px rgba(210, 191, 195, 0.8);
     background-color: rgb(30, 30, 30);
 }
 
-/* HEADER STYLES */
-.header-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
+/* ==========================================================================
+   Header Icons Styles
+   ========================================================================== */
 
 .header-icons {
     display: flex;
@@ -207,11 +275,10 @@ header.scrolled {
     justify-content: center;
 }
 
-.theme-toggle {
-    margin-left: 0;
-}
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
 
-/* FOOTER STYLES */
 footer {
     background-color: rgb(44, 44, 44);
     color: white;
@@ -284,11 +351,14 @@ footer {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* MOBILE STYLES */
+/* ==========================================================================
+   Mobile Styles
+   ========================================================================== */
+
 @media (max-width: 992px) {
     header {
-        padding: 20px 30px; /* Cambié de 15px a 20px */
-        min-height: 70px; /* Altura para tablet */
+        padding: 20px 30px;
+        min-height: 70px;
     }
 
     #logo {
@@ -313,16 +383,16 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        padding: 18px 20px; /* Cambié de 15px a 18px */
+        padding: 18px 20px;
         min-height: 65px;
     }
 
     #logo {
         width: 120px;
-        margin: 0 0 0 30px; /* Margen izquierdo para separar del hamburguesa */
+        margin: 0 0 0 30px;
         position: relative;
         z-index: 1002;
-        order: 2; /* Logo va después del botón */
+        order: 2;
     }
 
     .header-container {
@@ -345,10 +415,10 @@ footer {
         cursor: pointer;
         padding: 10px;
         position: relative;
-        margin-left: 0; /* Reset del margen */
-        margin-right: 0; /* Espacio entre botón y logo */
+        margin-left: 0;
+        margin-right: 0;
         z-index: 1001;
-        order: 1; /* Botón primero en el flujo */
+        order: 1;
     }
 
     .mobile-menu-toggle span {
@@ -437,17 +507,30 @@ footer {
     .social-icons {
         justify-content: center;
     }
+
+    /* Mobile Cart Notification */
+    .cart-notification {
+        width: 90%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .cart-notification.show {
+        right: auto;
+        bottom: 20px;
+    }
 }
 
 @media (max-width: 480px) {
     header {
-        padding: 15px 15px; /* Mantengo igual pero con min-height */
-        min-height: 60px; /* Altura para móvil pequeño */
+        padding: 15px 15px;
+        min-height: 60px;
     }
 
     #logo {
         width: 100px;
-        margin-left: 20px; /* Menos espacio en móviles pequeños */
+        margin-left: 20px;
     }
 
     .header-icons {
@@ -488,7 +571,10 @@ footer {
     }
 }
 
-/* MAIN CONTENT STYLES */
+/* ==========================================================================
+   Main Content Styles
+   ========================================================================== */
+
 main {
     flex-grow: 1;
     display: flex;
@@ -499,12 +585,14 @@ main {
     width: 100%;
 }
 
-/* Transiciones para el contenido */
+/* ==========================================================================
+   Transitions & Animations
+   ========================================================================== */
+
 .content-transition {
     transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* Animación de entrada */
 .fade-in {
     animation: fadeIn 0.5s forwards;
 }
@@ -514,7 +602,6 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animación de salida */
 .fade-out {
     animation: fadeOut 0.3s forwards;
 }
@@ -524,7 +611,6 @@ main {
     to { opacity: 0; transform: translateY(-20px); }
 }
 
-/* Para el loader entre transiciones */
 .loader-transition {
     position: fixed;
     top: 50%;
@@ -546,7 +632,7 @@ main {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
-/* Animaciones para filtros y paginación */
+
 .btn-filtro, .paginacion button {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -569,7 +655,7 @@ main {
 .panel-accesorios {
     transition: opacity 0.3s ease;
 }
-/* Animación para filtros activos */
+
 .btn-filtro.animate-active {
     animation: pulseActive 0.5s ease;
 }
@@ -580,7 +666,6 @@ main {
     100% { transform: scale(1); }
 }
 
-/* Estilos para botones activos */
 .btn-filtro.activo {
     background-color: rgb(255, 51, 95);
     color: white;
@@ -594,7 +679,6 @@ main {
     font-weight: bold;
 }
 
-/* Transición suave para el panel de resultados */
 .panel-accesorios {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
