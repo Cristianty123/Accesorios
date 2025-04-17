@@ -1,28 +1,94 @@
+<!-- cart.html -->
+<head>
+    <link rel="stylesheet" href="../css/style_cart.css" />
+</head>
 <div class="cart-container">
-    <h1 class="cart-title">Tu Carrito</h1>
-
-    <div class="cart-empty" id="cart-empty">
-        <i class="fas fa-shopping-cart"></i>
-        <p>Tu carrito está vacío</p>
+    <div class="cart-header">
+        <h1 class="cart-title">
+            <i class="fas fa-shopping-cart"></i> Tu Carrito de Compras
+        </h1>
+        <div class="cart-steps">
+            <div class="step active">
+                <span>1</span>
+                <p>Carrito</p>
+            </div>
+            <div class="step">
+                <span>2</span>
+                <p>Envío</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p>Pago</p>
+            </div>
+            <div class="step">
+                <span>4</span>
+                <p>Confirmación</p>
+            </div>
+        </div>
     </div>
 
-    <div class="cart-items" id="cart-items">
-        <!-- Items dinámicos se insertarán aquí -->
-    </div>
+    <div class="cart-content">
+        <div class="cart-main">
+            <div class="cart-empty" id="cart-empty">
+                <div class="empty-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h3>Tu carrito está vacío</h3>
+                <p>Parece que no has agregado ningún producto aún</p>
+                <a href="#" data-page="venta_accesorios.html?page=1" class="btn-continue nav-link">
+                    <i class="fas fa-arrow-left"></i> Continuar comprando
+                </a>
+            </div>
 
-    <div class="cart-summary" id="cart-summary">
-        <div class="summary-row">
-            <span>Subtotal:</span>
-            <span id="cart-subtotal">$0</span>
+            <div class="cart-items" id="cart-items">
+                <!-- Items dinámicos se insertarán aquí -->
+            </div>
+
+            <div class="cart-actions">
+                <a href="#" data-page="venta_accesorios.html?page=1" class="btn-continue nav-link">
+                    <i class="fas fa-arrow-left"></i> Continuar comprando
+                </a>
+                <button class="btn-clear" id="clear-cart">
+                    <i class="fas fa-trash"></i> Vaciar carrito
+                </button>
+            </div>
         </div>
-        <div class="summary-row">
-            <span>Envío:</span>
-            <span id="cart-shipping">$0</span>
+
+        <div class="cart-summary" id="cart-summary">
+            <h3 class="summary-title">Resumen de compra</h3>
+
+            <div class="summary-details">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span id="cart-shipping">$0</span>
+                </div>
+                <div class="summary-row discount">
+                    <span>Descuento:</span>
+                    <span id="cart-discount">$0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+            </div>
+
+            <button class="btn-checkout" id="checkout-btn">
+                <i class="fas fa-lock"></i> Proceder al pago
+            </button>
+
+            <div class="payment-methods">
+                <p>Aceptamos:</p>
+                <div class="methods-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
         </div>
-        <div class="summary-row total">
-            <span>Total:</span>
-            <span id="cart-total">$0</span>
-        </div>
-        <button class="btn-checkout" id="checkout-btn">Proceder al Pago</button>
     </div>
 </div>
