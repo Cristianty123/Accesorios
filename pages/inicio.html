@@ -7,103 +7,72 @@
     <link rel="stylesheet" href="../css/style_inicio.css">
 </head>
 <body>
-<!-- Sección principal con mensaje de bienvenida -->
-<section class="hero-section">
-    <div class="hero-content">
-        <h1 class="hero-title">
-            <span class="hero-title-part1">Encuentra los accesorios ideales para ti, al</span>
-            <span class="hero-title-part2">mejor precio</span>
-        </h1>
-        <p class="hero-description">
-            Explora nuestra selección de vehículos nuevos y usados, con
-            especificaciones detalladas, fotos en alta calidad y opciones de
-            financiamiento.
-        </p>
-    </div>
-    <div class="hero-image-container">
-        <img class="hero-image" src="../img/image0.png" alt="Imagen de bienvenida">
+<!-- Sección principal compacta -->
+<section class="compact-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Accesorios ideales <span>al mejor precio</span></h1>
+            <p>Explora nuestra selección de accesorios con especificaciones detalladas y opciones de financiamiento.</p>
+        </div>
+        <div class="hero-image">
+            <img src="../img/image0.png" alt="Accesorios para vehículos">
+        </div>
     </div>
 </section>
 
-<!-- Sección de categorías -->
-<section class="categories-section">
-    <div class="section-container">
-        <div class="categories-header">
-            <h2 class="section-title">Encuentra el accesorio ideal</h2>
-            <p class="section-subtitle">Variedad, calidad y confiabilidad en cada marca que ofrecemos</p>
-        </div>
+<!-- Sección de categorías compacta -->
+<section class="compact-categories">
+    <div class="container">
+        <h2>Encuentra el accesorio ideal</h2>
+        <p class="subtitle">Variedad, calidad y confiabilidad en cada marca</p>
 
         <div class="categories-grid">
-            <!-- Categoría 1 -->
-            <div class="category-card">
-                <div class="category-image-container">
-                    <img src="../img/image1.png" alt="Parqueo" class="category-image">
-                    <div class="category-overlay"></div>
+            <div class="category">
+                <img src="../img/image1.png" alt="Parqueo">
+                <div class="category-content">
+                    <h3>Parqueo</h3>
+                    <button class="category-button" data-tipo="parqueo">→</button>
                 </div>
-                <button class="category-button" data-tipo="parqueo">
-                    <span class="button-text">Parqueo</span>
-                    <span class="button-icon">→</span>
-                </button>
             </div>
 
-            <!-- Categoría 2 -->
-            <div class="category-card">
-                <div class="category-image-container">
-                    <img src="../img/image2.png" alt="Externos" class="category-image">
-                    <div class="category-overlay"></div>
+            <div class="category">
+                <img src="../img/image2.png" alt="Externos">
+                <div class="category-content">
+                    <h3>Externos</h3>
+                    <button class="category-button" data-tipo="externos">→</button>
                 </div>
-                <button class="category-button" data-tipo="externos">
-                    <span class="button-text">Externos</span>
-                    <span class="button-icon">→</span>
-                </button>
             </div>
 
-            <!-- Categoría 3 -->
-            <div class="category-card">
-                <div class="category-image-container">
-                    <img src="../img/image3.png" alt="Internos" class="category-image">
-                    <div class="category-overlay"></div>
+            <div class="category">
+                <img src="../img/image3.png" alt="Internos">
+                <div class="category-content">
+                    <h3>Internos</h3>
+                    <button class="category-button" data-tipo="internos">→</button>
                 </div>
-                <button class="category-button" data-tipo="internos">
-                    <span class="button-text">Internos</span>
-                    <span class="button-icon">→</span>
-                </button>
             </div>
 
-            <!-- Categoría 4 -->
-            <div class="category-card">
-                <div class="category-image-container">
-                    <img src="../img/image4.png" alt="Luces LED" class="category-image">
-                    <div class="category-overlay"></div>
+            <div class="category">
+                <img src="../img/image4.png" alt="Luces LED">
+                <div class="category-content">
+                    <h3>Luces LED</h3>
+                    <button class="category-button" data-tipo="luces_led">→</button>
                 </div>
-                <button class="category-button" data-tipo="luces_led">
-                    <span class="button-text">Luces LED</span>
-                    <span class="button-icon">→</span>
-                </button>
             </div>
 
-            <!-- Categoría 5 -->
-            <div class="category-card">
-                <div class="category-image-container">
-                    <img src="../img/image5.png" alt="Módulo Elevavidrios" class="category-image">
-                    <div class="category-overlay"></div>
+            <div class="category">
+                <img src="../img/image5.png" alt="Módulo Elevavidrios">
+                <div class="category-content">
+                    <h3>Elevavidrios</h3>
+                    <button class="category-button" data-tipo="elevavidrios">→</button>
                 </div>
-                <button class="category-button" data-tipo="elevavidrios">
-                    <span class="button-text">Módulo Elevavidrios</span>
-                    <span class="button-icon">→</span>
-                </button>
             </div>
 
-            <!-- Categoría 6 -->
-            <div class="category-card">
-                <div class="category-image-container">
-                    <img src="../img/image6.png" alt="Audio" class="category-image">
-                    <div class="category-overlay"></div>
+            <div class="category" >
+                <img src="../img/image6.png" alt="Audio">
+                <div class="category-content">
+                    <h3>Audio</h3>
+                    <button class="category-button" data-tipo="audio">→</button>
                 </div>
-                <button class="category-button" data-tipo="audio">
-                    <span class="button-text">Audio</span>
-                    <span class="button-icon">→</span>
-                </button>
             </div>
         </div>
     </div>
