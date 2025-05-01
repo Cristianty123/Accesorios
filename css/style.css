@@ -13,7 +13,28 @@
 
 /* Reset y estilos generales */
 :root {
-    --notification-color: #00c853; /* Color por defecto */
+  /* Modo oscuro (default) - BASADO EN TU CSS ACTUAL */
+  --bg-body: rgb(30, 30, 30);
+  --bg-header: transparent;
+  --bg-header-scrolled: rgb(30, 30, 30);
+  --bg-footer: rgb(44, 44, 44);
+  --texto-principal: white;
+  --texto-secundario: #ddd;
+  --bordes: rgba(255, 255, 255, 0.1);
+  --filtro-logo: brightness(0) invert(1);
+  --color-acento: #ff335f;
+}
+
+.modo-claro {
+  /* Modo claro - NUEVOS VALORES */
+  --bg-body: #f5f5f5;
+  --bg-header: rgba(255, 255, 255, 0.9);
+  --bg-header-scrolled: white;
+  --bg-footer: #e0e0e0;
+  --texto-principal: #333;
+  --texto-secundario: #555;
+  --bordes: rgba(0, 0, 0, 0.1);
+  --filtro-logo: none;
 }
 
 * {
@@ -26,8 +47,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(30, 30, 30);
-    color: white;
+    background-color: var(--bg-body);
+    color: var(--texto-principal);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -39,7 +60,7 @@ body {
    ========================================================================== */
 
 header {
-    background-color: transparent;
+    background-color: var(--bg-header);
     color: white;
     padding: 3vh 5vw;
     min-height: 80px;
@@ -234,7 +255,7 @@ input:checked + .slider::before {
 
 header.scrolled {
     box-shadow: 0 8px 20px rgba(210, 191, 195, 0.8);
-    background-color: rgb(30, 30, 30);
+    background-color: var(--bg-header-scrolled) !important;
 }
 
 /* ==========================================================================
@@ -280,7 +301,7 @@ header.scrolled {
    ========================================================================== */
 
 footer {
-    background-color: rgb(44, 44, 44);
+    background-color: var(--bg-footer);
     color: white;
     padding: 6vh 80px;
     margin-top: auto;
@@ -364,6 +385,7 @@ footer {
     #logo {
         width: 120px;
         margin-right: 0;
+        filter: var(--filtro-logo);
     }
 
     nav ul li a {
@@ -682,3 +704,109 @@ main {
 .panel-accesorios {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+body, header, footer, #logo {
+    transition: background-color 0.5s, color 0.3s, filter 0.3s;
+}
+  
+.modo-claro nav ul li a,
+.modo-claro .cart-icon, 
+.modo-claro .user-icon {
+    color: var(--texto-principal);
+ }
+  
+.modo-claro .footer-column a {
+    color: var(--texto-secundario);
+ }
+.modo-claro #logo {
+    filter: none; 
+    opacity: 0.9; 
+    filter: brightness(0.1) contrast(1.2);
+ }
+.modo-claro .social-icons img {
+    filter: brightness(0.7);
+}
+/* ===== FOOTER EN MODO CLARO ===== */
+.modo-claro footer {
+    color: var(--texto-principal); /* Gris oscuro (#333) */
+  }
+  
+  .modo-claro .footer-column h3 {
+    color: var(--texto-principal); /* Títulos en gris oscuro */
+  }
+  
+  .modo-claro .footer-column p,
+  .modo-claro .footer-column a {
+    color: var(--texto-secundario) !important;/* Texto secundario (#555) */
+  }
+  
+  .modo-claro .footer-column a:hover {
+    color: var(--color-acento); /* Rosa (#ff335f) al hover */
+  }
+  
+  .modo-claro .footer-divider {
+    border-top: 1px solid var(--bordes); /* Borde gris claro */
+  }
+  
+  .modo-claro .footer-copyright {
+    color: var(--texto-secundario); /* Texto gris (#555) */
+  }
+  
+  /* Ajuste para íconos sociales en modo claro */
+  .modo-claro .social-icons img {
+    filter: brightness(0.6); /* Oscurece íconos un 40% */
+    transition: filter 0.3s;
+  }
+  
+  .modo-claro .social-icons img:hover {
+    filter: brightness(0.8) drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
+  }
+
+/* ===== FOOTER - GENERAL ===== */
+footer {
+    background-color: var(--bg-footer);
+    color: var(--texto-principal); /* Aplica a todo el texto del footer */
+  }
+  
+  /* ===== COLUMNAS ===== */
+  .footer-column h3 {
+    color: var(--texto-principal); /* Títulos */
+  }
+  
+  .footer-column p,
+  .footer-column a {
+    color: var(--texto-secundario); /* Textos y enlaces normales */
+  }
+  
+  .footer-column a:hover {
+    color: var(--color-acento) !important; /* Rosa al hover */
+    text-decoration: none;
+  }
+  
+  /* ===== DIVISOR Y COPYRIGHT ===== */
+  .footer-divider {
+    border-top: 1px solid var(--bordes);
+  }
+  
+  .footer-copyright {
+    color: var(--texto-secundario);
+  }
+  
+  /* ===== ICONOS SOCIALES ===== */
+  .social-icons img {
+    filter: var(--filtro-iconos);
+    transition: filter 0.3s;
+  }
+  
+  .social-icons img:hover {
+    filter: brightness(1.1);
+  }
+  
+  /* ===== MODO CLARO ===== */
+  .modo-claro {
+    --bg-footer: #f0f0f0; /* Fondo gris muy claro */
+    --texto-principal: #333333; /* Texto principal oscuro */
+    --texto-secundario: #555555; /* Texto secundario gris */
+    --bordes: rgba(0, 0, 0, 0.1); /* Bordes grises */
+    --filtro-iconos: brightness(0.7); /* Iconos oscurecidos */
+  }

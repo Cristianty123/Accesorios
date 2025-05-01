@@ -5,6 +5,9 @@ body {
     background-color: #121212;
     color: white;
     line-height: 1.4;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background 0.5s, color 0.3s;
 }
 
 .container {
@@ -36,7 +39,7 @@ body {
 }
 
 .hero-content h1 span {
-    color: #ff335f;
+    color: var(--color-acento);
 }
 
 .hero-content p {
@@ -67,7 +70,7 @@ body {
 .compact-categories h2 {
     text-align: center;
     font-size: 2.2rem;
-    color: #ff335f;
+    color: var(--color-acento);
     margin-bottom: 10px;
     position: relative;
 }
@@ -80,7 +83,7 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: #ff335f;
+    background: var(--color-acento);
 }
 
 .compact-categories .subtitle {
@@ -107,7 +110,7 @@ body {
 
 .category:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 51, 95, 0.2);
+    box-shadow: 0 10px 20px var(--sombra-destacado);
 }
 
 .category img {
@@ -154,7 +157,7 @@ body {
 }
 
 .category:hover .category-button {
-    background: #ff335f;
+    background: var(--color-acento);
     color: white;
     transform: translateX(3px);
 }
@@ -201,3 +204,54 @@ body {
         height: 150px;
     }
 }
+
+:root {
+    --bg-primary: #121212;
+    --text-primary: white;
+    --text-secondary: #ddd;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-hover: rgba(255, 51, 95, 0.2);
+    --button-bg: rgba(255, 255, 255, 0.9);
+    --color-acento: #ff335f;       /* (Mantén este si lo usas en otros lugares) */
+    --color-acento: #ff335f;       /* Rosa para modo oscuro */
+    --azul-destacado: #007BFF;     /* Azul para modo claro */
+    --sombra-destacado: rgba(255, 51, 95, 0.2); /* Sombra rosa para modo oscuro */
+  }
+  
+.modo-claro {
+    --bg-primary: #f5f5f5;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --card-hover: rgba(255, 51, 95, 0.1);
+    --button-bg: rgba(0, 0, 0, 0.1);
+    --card-hover: rgba(0, 123, 255, 0.1); 
+    --color-acento: #007BFF;       /* Cambiar valor a azul */
+    --sombra-destacado: rgba(0, 123, 255, 0.2); /* Nueva variable */
+}
+  
+.hero-content p,
+  .compact-categories .subtitle {
+    color: var(--text-secondary);
+}
+  
+.category {
+    background: var(--card-bg);
+}
+  
+.category-button {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+  
+.modo-claro .category-content {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent);
+}
+.modo-claro .compact-categories h2::after {
+    background: var(--azul-destacado);
+}
+.modo-claro .hero-content h1 span {
+    color: var(--azul-destacado);
+}
+.modo-claro .compact-categories h2 {
+    color: var(--color-acento);
+  }
