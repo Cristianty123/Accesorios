@@ -10,7 +10,22 @@
     --black: #000000;
     --bg-dark: #121212;
     --bg-light-dark: #1e1e1e;
+    --icon-color: white;           
+    --divider-color: rgba(255, 51, 95, 0.3);
+    --primary-color-rgb: 255, 51, 95;
+    --text-primary: var(--white); 
 }
+.modo-claro {
+    --primary-color: #007BFF;       
+    --primary-dark: #0056B3;
+    --bg-dark: #f5f5f5;
+    --bg-light-dark: #e0e0e0;
+    --icon-color: #007BFF;          
+    --divider-color: rgba(0, 123, 255, 0.3);
+    --primary-color-rgb: 0, 123, 255;
+    --text-primary: var(--black); 
+    --medium-gray: #555555; 
+  }
 
 /* Reset y estilos base */
 * {
@@ -22,8 +37,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-dark);
-    color: var(--white);
+    color: var(--text-primary); 
     line-height: 1.6;
+    transition: all 0.5s ease;
 }
 
 .nosotros-container {
@@ -84,6 +100,7 @@ body {
 
 /* Intro Section */
 .intro-section {
+    color: var(--text-primary); 
     background-color: var(--bg-light-dark);
 }
 
@@ -103,6 +120,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: all 0.5s ease;
 }
 
 .mission-block, .vision-block {
@@ -135,13 +153,14 @@ body {
 /* Divider */
 .divider {
     height: 1px;
-    background-color: var(--medium-gray);
+    background-color: var(--divider-color);
     margin: 20px auto;
     max-width: 1200px;
 }
 
 /* Why Choose Section */
 .why-choose-section {
+    color: var(--text-primary); 
     background-color: var(--bg-light-dark);
 }
 
@@ -157,6 +176,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    transition: all 0.5s ease;
 }
 
 .features-list i {
@@ -170,11 +190,12 @@ body {
 }
 
 .commitment-block {
-    background-color: rgba(255, 51, 95, 0.1);
+    background-color: rgba(var(--primary-color-rgb), 0.1);
     padding: 20px;
     border-radius: 10px;
     margin-top: 30px;
     border-left: 4px solid var(--primary-color);
+    transition: all 0.5s ease;
 }
 
 .commitment-title {
@@ -275,4 +296,9 @@ body {
     .two-columns > * {
         min-width: 100%;
     }
+}
+
+.section-title i,
+.features-list i {
+  color: var(--icon-color);
 }

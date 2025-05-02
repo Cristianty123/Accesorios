@@ -1,13 +1,26 @@
 :root {
-    --primary-color: #ff335f;
+    --primary-color: #ff335f;       
     --primary-dark: #e62a53;
-    --secondary-color: #2c2c2c;
-    --light-gray: #f5f5f5;
-    --medium-gray: #747474;
-    --dark-gray: #333333;
-    --white: #ffffff;
-    --black: #000000;
+    --bg-primary: #121212;
+    --bg-secondary: #2c2c2c;
+    --text-primary: white;
+    --text-secondary: #747474;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --icon-bg: rgba(255, 51, 95, 0.1);
 }
+.modo-claro {
+
+    --primary-color: #007BFF;       
+    --primary-dark: #0056B3;
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #e0e0e0;
+    --text-primary: #000000;
+    --text-secondary: #555555;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --icon-bg: rgba(0, 123, 255, 0.1);
+    text-shadow: none !important; 
+    text-decoration: none !important; 
+  }
 
 * {
     margin: 0;
@@ -17,8 +30,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: var(--white);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
@@ -26,6 +39,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
+    background-color: var(--bg-primary);
 }
 
 .contact-header {
@@ -36,10 +50,14 @@ body {
 .contact-header h1 {
     font-size: 2.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
+    background: transparent;
+    text-shadow: none !important; 
+    text-decoration: none !important; 
+    border-bottom: none; 
 }
 
 .contact-header h1::after {
@@ -51,6 +69,7 @@ body {
     width: 80px;
     height: 3px;
     background: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .contact-header .subtitle {
@@ -74,12 +93,13 @@ body {
 }
 
 .info-card {
-    background: rgba(44, 44, 44, 0.6);
+    background: var(--bg-secondary);
     border-radius: 12px;
     padding: 30px;
     margin-bottom: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
 }
 
 .info-card:hover {
@@ -92,19 +112,24 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: rgba(255, 51, 95, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: var(--text-primary) !important; 
+    background: var(--icon-bg);
+    border: 1px solid var(--primary-color); 
     font-size: 1.5rem;
 }
 
 .info-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: var(--primary-color);
+    color: var(--text-primary) !important; 
+    background-color: transparent !important; 
+    background: var(--primary-color);
+    text-shadow: none !important; 
+    text-decoration: none !important; 
 }
 
 .info-card p {
@@ -134,10 +159,11 @@ body {
 }
 
 .contact-form {
-    background: rgba(44, 44, 44, 0.6);
+    background: var(--bg-secondary);
     border-radius: 12px;
     padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
 }
 
 .form-row {
@@ -170,10 +196,11 @@ body {
     background: transparent;
     border: none;
     border-bottom: 1px solid var(--medium-gray);
-    color: var(--white);
+    color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s;
+    border-color: var(--text-secondary);
 }
 
 .input-group input:focus,
@@ -275,8 +302,15 @@ body {
 
 .checkbox-group a {
     color: var(--primary-color);
-    text-decoration: none;
+    text-decoration: none !important;
     transition: color 0.3s;
+    background: var(--primary-color);
+    background: transparent;
+    font-weight: 600; 
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-shadow: none !important; 
+    border-bottom: none; 
 }
 
 .checkbox-group a:hover {
@@ -285,8 +319,9 @@ body {
 }
 
 .submit-btn {
+    color: white !important;
     background: var(--primary-color);
-    color: var(--white);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); 
     border: none;
     padding: 15px 30px;
     font-size: 1rem;
@@ -351,4 +386,12 @@ body {
     .info-card h3 {
         font-size: 1.2rem;
     }
+}
+.modo-claro a,
+.modo-claro h1,
+.modo-claro h2,
+.modo-claro h3,
+.modo-claro p {
+  text-decoration: none !important;
+  text-shadow: none !important;
 }

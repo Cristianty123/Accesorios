@@ -719,3 +719,22 @@ document.addEventListener("DOMContentLoaded", function () {
     NavigationManager.init();
     CartManager.updateCount(); // Actualizar contador del carrito al inicio
 });
+
+// Toggle del modo claro/oscuro
+document.getElementById('theme-switch').addEventListener('change', function() {
+    const isClaro = this.checked;
+    document.body.classList.toggle('modo-claro', isClaro);
+    
+    // Debug: Verifica en consola
+    console.log('Modo claro activado:', isClaro);
+    console.log('Clases del body:', document.body.classList);
+    
+    // Guardar preferencia
+    localStorage.setItem('modo-claro', isClaro);
+  });
+  
+  // Cargar modo guardado
+  if (localStorage.getItem('modo-claro') === 'true') {
+    document.getElementById('theme-switch').checked = true;
+    document.body.classList.add('modo-claro');
+  }
