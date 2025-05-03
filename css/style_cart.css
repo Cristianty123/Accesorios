@@ -1,20 +1,26 @@
 :root {
-    --primary-color: #ff335f;
-    --primary-hover: #e62a54;
-    --secondary-color: #444;
-    --dark-bg: #1a1a1a;
-    --darker-bg: #121212;
-    --card-bg: #2c2c2c;
-    --text-light: #f0f0f0;
-    --text-muted: #aaa;
-    --border-color: #444;
-    --success-color: #00c853;
-    --warning-color: #ff9100;
-    --error-color: #ff1744;
-    --discount-color: #4caf50;
-    --border-radius: 12px;
-    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    --transition: all 0.3s ease;
+    --primary-color: #ff335f;             
+    --primary-hover: #e62a54;           
+    --success-color: #00c853;              
+    --error-color: #ff1744;              
+    --discount-color: #4caf50;        
+    --dark-bg: #1a1a1a;                 
+    --card-bg: #2c2c2c;                   
+    --text-light: #f0f0f0;                
+    --text-muted: #aaa;                     
+    --border-color: #444;                   
+}
+.modo-claro {
+    --primary-color: #007BFF;             
+    --primary-hover: #0056b3;            
+    --dark-bg: #f5f5f5;              
+    --card-bg: #ffffff;                 
+    --text-light: #333;                  
+    --text-muted: #666;                  
+    --border-color: #e0e0e0;              
+    --success-color: #00c853;               
+    --error-color: #ff1744;      
+    --discount-color: #4caf50;           
 }
 
 .cart-container {
@@ -33,7 +39,7 @@
 }
 
 .cart-title {
-    color: var(--primary-color);
+    color: var(--primary-color); 
     margin-bottom: 30px;
     font-size: 2.5rem;
     display: flex;
@@ -96,7 +102,8 @@
 
 .cart-summary {
     flex: 1;
-    background: var(--card-bg);
+    background: var(--card-bg);    
+    border-color: var(--border-color); 
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -286,7 +293,7 @@
 .summary-title {
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: var(--text-light);
+    color: var(--primary-color); 
     font-weight: 600;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
@@ -414,6 +421,7 @@
 .btn-continue {
     background: none;
     border: 1px solid var(--primary-color);
+    border-color: var(--primary-color); 
     color: var(--primary-color);
 }
 
@@ -433,6 +441,8 @@
 
 .cart-item {
     transition: all 0.2s ease;
+    background: var(--card-bg);       
+    border-color: var(--border-color);
 }
 
 .quantity-control {
@@ -519,4 +529,15 @@
     .btn-apply {
         padding: 10px;
     }
+}
+* {
+    transition: 
+        background-color 0.4s ease-in-out, 
+        color 0.3s ease, 
+        border-color 0.4s ease;
+}
+
+.btn-checkout:hover {
+    background: var(--primary-hover);  
+    transform: translateY(-2px);
 }
