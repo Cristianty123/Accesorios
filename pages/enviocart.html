@@ -1,0 +1,307 @@
+<!-- shipping.html -->
+<head>
+    <link rel="stylesheet" href="../css/style_cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        body {
+            background-color: var(--dark-bg);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .cart-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+            background: var(--dark-bg);
+            min-height: 100vh;
+        }
+        
+        .cart-header {
+            margin-bottom: 30px;
+        }
+        
+        .shipping-content {
+            display: flex;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .shipping-main {
+            flex: 2;
+            background: var(--darker-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .shipping-summary {
+            flex: 1;
+            background: var(--darker-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+        }
+        
+        .summary-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .summary-item.total {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 15px;
+        }
+        
+        .summary-item.discount {
+            color: var(--discount-color);
+        }
+        
+        .product-list {
+            margin-top: 30px;
+        }
+        
+        .product-list h3 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Estilo modificado para el botón de continuar al pago */
+        .btn-checkout {
+            padding: 12px 30px; /* Reducido el padding vertical y horizontal */
+            font-size: 1rem; /* Tamaño de fuente ligeramente reducido */
+            width: auto; /* Ancho automático en lugar de 100% */
+            display: inline-flex; /* Para que ocupe solo el espacio necesario */
+        }
+        
+        @media (max-width: 1024px) {
+            .shipping-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .cart-container {
+                padding: 15px;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn-checkout, .btn-continue {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<div class="cart-container">
+    <div class="cart-header">
+        <h1 class="cart-title">
+            <i class="fas fa-truck"></i> Información de Envío
+        </h1>
+        <div class="cart-steps">
+            <div class="step">
+                <span>1</span>
+                <p>Carrito</p>
+            </div>
+            <div class="step active">
+                <span>2</span>
+                <p>Envío</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p>Pago</p>
+            </div>
+            <div class="step">
+                <span>4</span>
+                <p>Confirmación</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="shipping-content">
+        <div class="shipping-main">
+            <h2 class="form-title">Datos de envío</h2>
+            
+            <form id="shipping-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">Nombre</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Apellido</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Dirección</label>
+                    <input type="text" id="address" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip-code">Código Postal</label>
+                        <input type="text" id="zip-code" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">País</label>
+                    <select id="country" required>
+                        <option value="">Seleccione su país</option>
+                        <option value="AR">Argentina</option>
+                        <option value="CL">Chile</option>
+                        <option value="CO">Colombia</option>
+                        <option value="MX">México</option>
+                        <option value="PE">Perú</option>
+                        <option value="ES">España</option>
+                        <option value="US">Estados Unidos</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+            </form>
+        </div>
+
+        <div class="shipping-summary">
+            <h2 class="summary-title">Resumen de compra</h2>
+            
+            <div class="order-summary">
+                <div class="summary-item">
+                    <span>Productos (5)</span>
+                    <span>$130.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Envío</span>
+                    <span>$10.00</span>
+                </div>
+                <div class="summary-item discount">
+                    <span>Descuento</span>
+                    <span>-$15.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span>$115.00</span>
+                </div>
+            </div>
+            
+            <div class="product-list">
+                <h3>Tus productos</h3>
+                <div class="product-item">
+                    <span>Producto 1 x 1</span>
+                    <span>$40.00</span>
+                </div>
+                <div class="product-item">
+                    <span>Producto 2 x 1</span>
+                    <span>$50.00</span>
+                </div>
+                <div class="product-item">
+                    <span>Producto 3 x 1</span>
+                    <span>$30.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart-actions">
+        <a href="cart.html" class="btn-continue">
+            <i class="fas fa-arrow-left"></i> Volver al carrito
+        </a>
+        <a href="payment.html" class="btn-checkout">
+            <i class="fas fa-arrow-right"></i> Continuar al pago
+        </a>
+    </div>
+</div>
