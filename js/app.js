@@ -219,7 +219,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.showNotification('El carrito está vacío', 'error');
                 return;
             }
-            alert('Redirigiendo a proceso de pago...');
+
+            localStorage.setItem('cartData', JSON.stringify({
+                items: this.items,
+                subtotal: this.calculateSubtotal(),
+                shipping: this.calculateShipping(),
+                total: this.calculateTotal()
+            }));
+    
+            TRANSITION.loader.style.display = 'block';
+    
+            setTimeout(() => {
+                NavigationManager.loadPage('enviocart.html');
+            }, 500);
+        },
+
+        calculateSubtotal() {
+            return this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        },
+
+        calculateShipping() {
+            return this.calculateSubtotal() > 100000 ? 0 : 10000;
+        },
+
+        calculateTotal() {
+            return this.calculateSubtotal() + this.calculateShipping();
         },
 
         clearCart() {
@@ -412,6 +436,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.setupAddToCartButton();
             } else if (url === "cart.html") {
                 CartManager.init();
+            } else if (url === "enviocart.html") {
+            } else if (url === "payment.html") {
             }
         },
 
@@ -430,6 +456,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         }
+        
     };
 
     // Módulo de Gestión de Items
