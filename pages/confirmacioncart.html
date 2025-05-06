@@ -1,0 +1,252 @@
+<!-- confirmation.html -->
+<head>
+    <link rel="stylesheet" href="../css/style_cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        body {
+            background-color: var(--dark-bg);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .cart-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+            background: var(--dark-bg);
+            min-height: 100vh;
+        }
+        
+        .confirmation-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .confirmation-icon {
+            font-size: 5rem;
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-title {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-message {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .order-details {
+            background: var(--darker-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .order-section {
+            margin-bottom: 25px;
+        }
+        
+        .order-section h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .detail-row .label {
+            color: var(--text-muted);
+        }
+        
+        .order-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .btn-back-to-shop {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .btn-back-to-shop:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+        
+        .confirmation-steps {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+        
+        .step.completed span {
+            background: var(--success-color);
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-content {
+                padding: 20px 15px;
+            }
+            
+            .confirmation-title {
+                font-size: 1.8rem;
+            }
+            
+            .confirmation-message {
+                font-size: 1rem;
+            }
+            
+            .confirmation-steps {
+                gap: 15px;
+            }
+            
+            .step p {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<div class="cart-container">
+    <div class="cart-header">
+        <h1 class="cart-title">
+            <i class="fas fa-check-circle"></i> Confirmación de Pedido
+        </h1>
+        <div class="confirmation-steps">
+            <div class="step completed">
+                <span><i class="fas fa-check"></i></span>
+                <p>Carrito</p>
+            </div>
+            <div class="step completed">
+                <span><i class="fas fa-check"></i></span>
+                <p>Envío</p>
+            </div>
+            <div class="step completed">
+                <span><i class="fas fa-check"></i></span>
+                <p>Pago</p>
+            </div>
+            <div class="step active">
+                <span>4</span>
+                <p>Confirmación</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="confirmation-content">
+        <div class="confirmation-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h1 class="confirmation-title">¡Pedido Confirmado!</h1>
+        
+        <p class="confirmation-message">
+            Gracias por tu compra. Hemos recibido tu pedido correctamente.<br>
+            Te hemos enviado un correo electrónico con los detalles de tu compra a <strong>correo@ejemplo.com</strong>.
+        </p>
+        
+        <div class="order-details">
+            <div class="order-section">
+                <h3>Resumen del Pedido</h3>
+                <div class="detail-row">
+                    <span class="label">Número de pedido:</span>
+                    <span>#ORD-2023-45678</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Fecha:</span>
+                    <span>15 Noviembre 2023</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Total:</span>
+                    <span class="order-total">$115.00</span>
+                </div>
+            </div>
+            
+            <div class="order-section">
+                <h3>Método de Pago</h3>
+                <div class="detail-row">
+                    <span class="label">Método:</span>
+                    <span>Tarjeta de crédito (Visa ****4242)</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Fecha de transacción:</span>
+                    <span>15 Noviembre 2023 - 14:30</span>
+                </div>
+            </div>
+            
+            <div class="order-section">
+                <h3>Información de Envío</h3>
+                <div class="detail-row">
+                    <span class="label">Nombre:</span>
+                    <span>Agrífildo Pérez</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Dirección:</span>
+                    <span>Calle Principal 123, Ciudad de México, 12345</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Teléfono:</span>
+                    <span>+52 55 1234 5678</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Método de envío:</span>
+                    <span>Envío estándar (3-5 días hábiles)</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Fecha estimada de entrega:</span>
+                    <span>20-22 Noviembre 2023</span>
+                </div>
+            </div>
+            
+            <div class="order-section">
+                <h3>Productos</h3>
+                <div class="detail-row">
+                    <span>Producto 1 x 1</span>
+                    <span>$40.00</span>
+                </div>
+                <div class="detail-row">
+                    <span>Producto 2 x 1</span>
+                    <span>$50.00</span>
+                </div>
+                <div class="detail-row">
+                    <span>Producto 3 x 1</span>
+                    <span>$30.00</span>
+                </div>
+            </div>
+        </div>
+        
+        <a href="venta_accesorios.html" class="btn-back-to-shop">
+            <i class="fas fa-shopping-bag"></i> Volver a la tienda
+        </a>
+    </div>
+</div>
