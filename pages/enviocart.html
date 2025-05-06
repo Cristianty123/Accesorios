@@ -1,4 +1,3 @@
-<!-- shipping.html -->
 <head>
     <link rel="stylesheet" href="../css/style_cart.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -297,11 +296,70 @@
     </div>
     
     <div class="cart-actions">
-        <a href="cart.html" class="btn-continue">
+        <a href="#" data-page="cart.html" class="btn-continue nav-link">
             <i class="fas fa-arrow-left"></i> Volver al carrito
         </a>
-        <a href="payment.html" class="btn-checkout">
+        <a href="#" data-page="payment.html" class="btn-checkout nav-link">
             <i class="fas fa-arrow-right"></i> Continuar al pago
         </a>
     </div>
 </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Cargar datos del carrito
+        const cartData = JSON.parse(localStorage.getItem('cartData'));
+        
+        if (cartData) {
+            // Actualizar resumen de compra
+            document.querySelector('.order-summary').innerHTML = `
+                <div class="summary-item">
+                    <span>Productos (${cartData.items.reduce((total, item) => total + item.quantity, 0)})</span>
+                    <span>$${cartData.subtotal.toLocaleString('es-CO')}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Envío</span>
+                    <span>${cartData.shipping === 0 ? 'Gratis' : `$${cartData.shipping.toLocaleString('es-CO')}`}</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span>$${cartData.total.toLocaleString('es-CO')}</span>
+                </div>
+            `;
+            
+            // Actualizar lista de productos
+            const productList = document.querySelector('.product-list');
+            productList.innerHTML = `
+                <h3>Tus productos</h3>
+                ${cartData.items.map(item => `
+                    <div class="product-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>$${(item.price * item.quantity).toLocaleString('es-CO')}</span>
+                    </div>
+                `).join('')}
+            `;
+        }
+        
+        // Manejar envío del formulario
+        document.getElementById('enviocart-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar formulario
+            const formData = {
+                firstName: document.getElementById('first-name').value,
+                lastName: document.getElementById('last-name').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                zipCode: document.getElementById('zip-code').value,
+                country: document.getElementById('country').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value
+            };
+            
+            // Guardar datos de envío
+            localStorage.setItem('enviocartData', JSON.stringify(formData));
+            
+            // Redirigir a pago
+            NavigationManager.loadPage('enviocart.html');
+        });
+    });
+    </script>
